@@ -11,4 +11,6 @@
 @property (nonatomic, copy) JMStaticContentTableViewCellBlock configureBlock;
 @property (nonatomic, copy) JMStaticContentTableViewCellWhenSelectedBlock whenSelectedBlock;
 
+- (void) setWhenSelectedBlock:(JMStaticContentTableViewCellWhenSelectedBlock)whenSelectedBlock;
+
 @end
