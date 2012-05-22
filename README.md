@@ -2,7 +2,7 @@
 <img style="position: relative; width: 852px; height: 489px; margin: 0;" src="http://cl.ly/270g1q1e012L1l3n3H0u/GithubHeader.gif" alt="JMStaticTableViewController"/>
 </div>
 
-A `UITableViewController` subclass that allows you easily and simply display content similar to what is found in iOS's built-in Settings application. It also allows you to easily create `UITableViewControllers` that collection information.
+A `UITableViewController` subclass that allows you easily and simply display content similar to what is found in iOS's built-in Settings application, but using blocks. It also allows you to easily create `UITableViewControllers` that collection information.
 
 ## Requirements
 
