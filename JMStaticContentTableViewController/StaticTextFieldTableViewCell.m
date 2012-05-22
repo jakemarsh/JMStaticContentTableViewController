@@ -4,10 +4,4 @@
 
 @synthesize contentTextField = _contentTextField;
 
-- (void) dealloc {
-	[_contentTextField release];
-
-	[super dealloc];
-}
-
 @end

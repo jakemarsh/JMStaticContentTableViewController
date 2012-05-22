@@ -6,16 +6,6 @@
 @synthesize staticContentSections = _staticContentSections;
 @synthesize footerText = _footerText;
 
-- (void) dealloc {
-	[_staticContentSections release];
-	[_footerText release];
-
-	[super dealloc];
-}
-- (void) didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 #pragma mark - View lifecycle
 
 - (void) viewDidLoad {
@@ -25,6 +15,10 @@
 }
 - (void) viewDidUnload {
     [super viewDidUnload];
+}
+
+- (void) didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - Table view data source
@@ -56,7 +50,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellContent.reuseIdentifier];
 
     if (cell == nil) {
-		cell = [[[[cellContent tableViewCellSubclass] alloc] initWithStyle:cellContent.cellStyle reuseIdentifier:cellContent.reuseIdentifier] autorelease];
+		cell = [[[cellContent tableViewCellSubclass] alloc] initWithStyle:cellContent.cellStyle reuseIdentifier:cellContent.reuseIdentifier];
     }
 
 	cell.imageView.image = nil;
@@ -98,7 +92,7 @@
 - (void) addSection:(JMStaticContentTableViewControllerAddSectionBlock)b {
 	if(!self.staticContentSections) self.staticContentSections = [NSArray array];
 	
-	JMStaticContentTableViewSection *section = [[[JMStaticContentTableViewSection alloc] init] autorelease];
+	JMStaticContentTableViewSection *section = [[JMStaticContentTableViewSection alloc] init];
 	section.tableView = self.tableView;
 	
 	b(section, [self.staticContentSections count] + 1);
@@ -114,15 +108,13 @@
 
 	NSMutableArray *mutableSections = [self.staticContentSections mutableCopy];
 
-	JMStaticContentTableViewSection *section = [[[JMStaticContentTableViewSection alloc] init] autorelease];
+	JMStaticContentTableViewSection *section = [[JMStaticContentTableViewSection alloc] init];
 
 	b(section, sectionIndex);
 
 	[mutableSections insertObject:section atIndex:sectionIndex];
 
 	self.staticContentSections = [NSArray arrayWithArray:mutableSections];
-
-	[mutableSections release];
 
 	if(animated) {
 		[self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -141,8 +133,6 @@
 	
 	self.staticContentSections = [NSArray arrayWithArray:sections];
 	
-	[sections release];
-	
 	if(animated) {
 		[self.tableView beginUpdates];
 
@@ -157,7 +147,6 @@
 - (JMStaticContentTableViewSection *) sectionAtIndex:(NSUInteger)sectionIndex {
 	return [self.staticContentSections objectAtIndex:sectionIndex];
 }
-
 
 - (void) insertCell:(JMStaticContentTableViewCellBlock)configurationBlock 
 		atIndexPath:(NSIndexPath *)indexPath 
@@ -183,12 +172,8 @@
 }
 
 - (void) setFooterText:(NSString *)footerTextValue {
-	if(footerTextValue != _footerText) {
-		[footerTextValue retain];
-		[_footerText release];
-		_footerText = footerTextValue;
-	}
-	
+    _footerText = footerTextValue;
+
 	if(!footerTextValue) {
 		if([self isViewLoaded]) {
 			self.tableView.tableFooterView = nil;
@@ -227,15 +212,11 @@
 		footerLabelFrame.origin.y = 0.0;	
 		footerLabel.frame = footerLabelFrame;
 
-		[footerLabel release];
-
 		CGRect containerFrame = footerLabelContainerView.frame;
 		containerFrame.size.height = footerLabel.frame.size.height + 10.0;
 		footerLabelContainerView.frame = containerFrame;
 
 		self.tableView.tableFooterView = footerLabelContainerView;
-
-		[footerLabelContainerView release];
 	}
 }
 

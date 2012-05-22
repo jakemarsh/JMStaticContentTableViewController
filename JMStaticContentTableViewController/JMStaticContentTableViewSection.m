@@ -7,14 +7,6 @@
 @synthesize staticContentCells = _staticContentCells;
 @synthesize title = _title;
 
-- (void) dealloc {
-	self.tableView = nil;
-	[_staticContentCells release];
-	[_title release];
-
-	[super dealloc];
-}
-
 - (void) addCell:(JMStaticContentTableViewCellBlock)configurationBlock {
 	[self addCell:configurationBlock whenSelected:nil];
 }
@@ -22,7 +14,7 @@
 - (void) addCell:(JMStaticContentTableViewCellBlock)configurationBlock whenSelected:(JMStaticContentTableViewCellWhenSelectedBlock)whenSelectedBlock {
 	if(!self.staticContentCells) self.staticContentCells = [NSArray array];
 
-	JMStaticContentTableViewCell *staticContentCell = [[[JMStaticContentTableViewCell alloc] init] autorelease];
+	JMStaticContentTableViewCell *staticContentCell = [[JMStaticContentTableViewCell alloc] init];
 
 	staticContentCell.configureBlock = configurationBlock;
 	staticContentCell.whenSelectedBlock = whenSelectedBlock;
@@ -41,7 +33,7 @@
 		
 	NSMutableArray *mutableCells = [self.staticContentCells mutableCopy];
 	
-	JMStaticContentTableViewCell *staticContentCell = [[[JMStaticContentTableViewCell alloc] init] autorelease];
+	JMStaticContentTableViewCell *staticContentCell = [[JMStaticContentTableViewCell alloc] init];
 
 	staticContentCell.configureBlock = configurationBlock;
 	staticContentCell.whenSelectedBlock = whenSelectedBlock;
@@ -51,8 +43,6 @@
 	[mutableCells insertObject:staticContentCell atIndex:indexPath.row];
 
 	self.staticContentCells = [NSArray arrayWithArray:mutableCells];
-
-	[mutableCells release];
 
 	if(animated) {
 		[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -70,9 +60,7 @@
 	[cells removeObjectAtIndex:rowIndex];
 	
 	self.staticContentCells = [NSArray arrayWithArray:cells];
-	
-	[cells release];
-	
+
 	if(animated) {
 		[self.tableView beginUpdates];
 

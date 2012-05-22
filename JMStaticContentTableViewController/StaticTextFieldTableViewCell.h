@@ -3,6 +3,6 @@
 
 @interface StaticTextFieldTableViewCell : JMStaticContentTableViewCell
 
-@property (nonatomic, retain) UITextField *contentTextField;
+@property (nonatomic, strong) UITextField *contentTextField;
 
 @end

@@ -21,14 +21,5 @@
 	
 	return self;
 }
-- (void) dealloc {
-	[_reuseIdentifier release];
-	[_tableViewCellSubclass release];
-
-	[_configureBlock release];
-	[_whenSelectedBlock release];
-
-	[super dealloc];
-}
 
 @end
