@@ -4,11 +4,13 @@
 
 A `UITableViewController` subclass that allows you easily and simply display content similar to what is found in iOS's built-in Settings application. It also allows you to easily create `UITableViewControllers` that collection information.
 
-Requirements: You'll need to build your project that is using `JMStaticContentTableViewController` with a compiler that supports Automatic Reference Counting. Your project does not have to use ARC to use this library.
+## Requirements
 
-### Example Usage
+You'll need to build your project that is using `JMStaticContentTableViewController` with a compiler that supports Automatic Reference Counting. Your project does not have to use ARC to use this library.
 
-#### Adding a section and a cell
+## Example Usage
+
+### Adding a section and a cell
 
 ``` objc
 - (void) viewDidLoad {
@@ -28,7 +30,7 @@ Requirements: You'll need to build your project that is using `JMStaticContentTa
 }
 ```
 
-#### Inserting A Cell
+### Inserting A Cell
 
 ``` objc
 
@@ -49,7 +51,7 @@ Requirements: You'll need to build your project that is using `JMStaticContentTa
 
 ```
 
-#### Inserting Multiple Cells
+### Inserting Multiple Cells
 
 ``` objc
 
@@ -74,7 +76,35 @@ for(SomeModelObject *o in self.awesomeModelObjects) {
 	
 ```
 
-#### Animation
+### Animation
 
 Anytime you ask `JMStaticContentTableViewController` to animate the inserting or deleting of cells or sections, it will use the `UITableViewRowAnimation` style of `UITableViewRowAnimationAutomatic` under the hood, so all of your animations will look great.
+
+
+## Adding To Your Project
+
+### CocoaPods (The New Easy Way)
+
+If you are using [CocoaPods](http://cocoapods.org) than just add next line to your `Podfile`:
+
+``` ruby
+dependency 'JMStaticContentTableViewController'
+```
+
+Now run `pod install` to install the dependency.
+
+### Manually (The Old Hard Way)
+
+[Download](https://github.com/jakemarsh/JMStaticContentTableViewController/zipball/master) the source files or add it as a [git submodule](http://schacon.github.com/git/user-manual.html#submodules). Here's how to add it as a submodule:
+
+    $ cd YourProject
+    $ git submodule add https://github.com/jakemarsh/JMStaticContentTableViewController.git Vendor/JMStaticContentTableViewController
+
+Add all of the files inside the folder named "JMStaticContentTableViewController" to your project.
+
+`JMStaticContentTableViewController` uses [Automatic Reference Counting (ARC)](http://clang.llvm.org/docs/AutomaticReferenceCounting.html). If your project doesn't use ARC, you will need to set the `-fobjc-arc compiler` flag on all of the SSPullToRefresh source files. To do this in Xcode, go to your active target and select the "Build Phases" tab. In the "Compiler Flags" column, set `-fobjc-arc` for each of the `JMStaticContentTableViewController` source files.
+
+### "This Library is Bad, and You Should Feel Bad"
+
+This is a very opinionated library. It makes assumptions and defines conventions that might not fit perfectly with everyone's codebase or app. If you are one of those people, please feel free to submit a pull request.
 
