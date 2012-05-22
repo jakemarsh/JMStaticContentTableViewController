@@ -28,11 +28,9 @@ Requirements: You'll need to build your project that is using `JMStaticContentTa
 }
 ```
 
-#### Inserting cells
+#### Inserting A Cell
 
 ``` objc
-
-// Somewhere else you'd probably load some data somehow and then want to insert rows for the new items in that data
 
 - (void) _someTaskFinished {
 	[self insertCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
@@ -51,14 +49,20 @@ Requirements: You'll need to build your project that is using `JMStaticContentTa
 
 ```
 
+#### Inserting Multiple Cells
+
 ``` objc
+
+// Somewhere else you'd probably load some data somehow,
+// then want to insert rows for the new items in that data.
+
 // Normal table view functionality is completely retained, for example,
 // here we're inserting a bunch of cells inside a beginUpdates/endUpdates block
 // so all our new cells will animate in simultaneously and look awesome.
 
 [self.tableView beginUpdates];
 
-for(SomeModelObject *o in self.objects) {
+for(SomeModelObject *o in self.awesomeModelObjects) {
 	[self insertCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
 		staticContentCell.reuseIdentifier = @"SomeCell";
 	
@@ -68,7 +72,6 @@ for(SomeModelObject *o in self.objects) {
 
 [self.tableView endUpdates];
 	
-// The library uses the UITableViewRowAnimationAutomatic 
 ```
 
 #### Animation
