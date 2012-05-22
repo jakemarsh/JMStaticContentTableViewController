@@ -85,7 +85,7 @@ Anytime you ask `JMStaticContentTableViewController` to animate the inserting or
 
 ### CocoaPods (The New Easy Way)
 
-If you are using [CocoaPods](http://cocoapods.org) than just add next line to your `Podfile`:
+If you are using [CocoaPods](http://cocoapods.org) then just add this line to your `Podfile`:
 
 ``` ruby
 dependency 'JMStaticContentTableViewController'
