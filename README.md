@@ -102,7 +102,9 @@ Now run `pod install` to install the dependency.
 
 Add all of the files inside the folder named "JMStaticContentTableViewController" to your project.
 
-`JMStaticContentTableViewController` uses [Automatic Reference Counting (ARC)](http://clang.llvm.org/docs/AutomaticReferenceCounting.html). If your project doesn't use ARC, you will need to set the `-fobjc-arc compiler` flag on all of the SSPullToRefresh source files. To do this in Xcode, go to your active target and select the "Build Phases" tab. In the "Compiler Flags" column, set `-fobjc-arc` for each of the `JMStaticContentTableViewController` source files.
+### ARC
+
+`JMStaticContentTableViewController` uses [Automatic Reference Counting (ARC)](http://clang.llvm.org/docs/AutomaticReferenceCounting.html). You should be using ARC too, it's the future. If your project doesn't use ARC, you will need to set the `-fobjc-arc compiler` flag on all of the SSPullToRefresh source files. To do this in Xcode, go to your active target and select the "Build Phases" tab. In the "Compiler Flags" column, set `-fobjc-arc` for each of the `JMStaticContentTableViewController` source files.
 
 ### "This Library is Bad, and You Should Feel Bad"
 
