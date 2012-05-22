@@ -7,6 +7,7 @@
 @interface JMStaticContentTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSArray *staticContentSections;
+@property (nonatomic, strong) NSString *headerText;
 @property (nonatomic, strong) NSString *footerText;
 
 - (void) addSection:(JMStaticContentTableViewControllerAddSectionBlock)b;

@@ -4,6 +4,8 @@
 @implementation JMStaticContentTableViewController
 
 @synthesize staticContentSections = _staticContentSections;
+
+@synthesize headerText = _headerText;
 @synthesize footerText = _footerText;
 
 #pragma mark - View lifecycle
@@ -64,6 +66,28 @@
 
 #pragma mark - Table view delegate
 
+- (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+	JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:indexPath.section];
+	JMStaticContentTableViewCell *cellContent = [sectionContent.staticContentCells objectAtIndex:indexPath.row];
+
+    return cellContent.editingStyle;
+}
+
+- (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+	JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:indexPath.section];
+	JMStaticContentTableViewCell *cellContent = [sectionContent.staticContentCells objectAtIndex:indexPath.row];
+
+    return cellContent.editable;
+}
+
+
+- (BOOL) tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+	JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:indexPath.section];
+	JMStaticContentTableViewCell *cellContent = [sectionContent.staticContentCells objectAtIndex:indexPath.row];
+
+    return cellContent.moveable;
+}
+
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if(!tableView.editing && !tableView.allowsMultipleSelection) [tableView deselectRowAtIndexPath:indexPath animated:YES];
 	if(tableView.editing && !tableView.allowsMultipleSelectionDuringEditing) [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -75,7 +99,6 @@
 		cellContent.whenSelectedBlock(indexPath);
 	}
 }
-
 - (void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
 	[self.view endEditing:YES];
 }
@@ -169,6 +192,58 @@
 		   whenSelected:whenSelectedBlock 
 			atIndexPath:indexPath
 			   animated:animated];
+}
+
+#pragma mark - Headers & Footers
+
+- (void) setHeaderText:(NSString *)headerTextValue {
+    _headerText = headerTextValue;
+    
+	if(!headerTextValue) {
+		if([self isViewLoaded]) {
+			self.tableView.tableFooterView = nil;
+		}
+		
+		return;
+	}
+	
+	if([self isViewLoaded]) {
+		UIView *headerLabelContainerView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 0.0)];
+		UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 10.0, 280.0, 0.0)];
+        
+		headerLabel.backgroundColor = [UIColor clearColor];
+		headerLabel.font = [UIFont systemFontOfSize:15.0];
+		headerLabel.textColor = [UIColor colorWithRed:61.0/255.0 green:77.0/255.0 blue:99.0/255.0 alpha:1.0];
+		headerLabel.shadowColor = [UIColor colorWithWhite:1.0 alpha:0.65];
+		headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+		headerLabel.textAlignment = UITextAlignmentCenter;
+		headerLabel.numberOfLines = 0;
+        
+		headerLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        
+		headerLabel.text = self.headerText;
+        
+		[headerLabel sizeToFit];
+        
+		CGRect headerLabelContainerViewRect = headerLabelContainerView.frame;
+		headerLabelContainerViewRect.size.height = headerLabel.frame.size.height + 10.0;
+		headerLabel.frame = headerLabelContainerViewRect;
+        
+		[headerLabelContainerView addSubview:headerLabel];
+        
+		CGRect headerLabelFrame = headerLabel.frame;
+		headerLabelFrame.size.width = 280.0;
+		headerLabelFrame.origin.x = 20.0;
+		headerLabelFrame.origin.y = 10.0;	
+        headerLabelFrame.size.height += 10.0;
+		headerLabel.frame = headerLabelFrame;
+        
+		CGRect containerFrame = headerLabelContainerView.frame;
+		containerFrame.size.height = headerLabel.frame.size.height + 10.0;
+		headerLabelContainerView.frame = containerFrame;
+        
+		self.tableView.tableHeaderView = headerLabelContainerView;
+	}
 }
 
 - (void) setFooterText:(NSString *)footerTextValue {

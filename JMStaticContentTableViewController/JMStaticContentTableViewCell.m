@@ -10,6 +10,10 @@
 @synthesize configureBlock = _configureBlock;
 @synthesize whenSelectedBlock = _whenSelectedBlock;
 
+@synthesize editingStyle = _editingStyle;
+@synthesize editable = _editable;
+@synthesize moveable = _moveable;
+
 - (id) init {
 	self = [super init];
 	if(!self) return nil;
@@ -18,7 +22,11 @@
 	self.tableViewCellSubclass = [UITableViewCell class];
 	self.cellStyle = UITableViewCellStyleDefault;
 	self.reuseIdentifier = @"DefaultCell";
-	
+
+    self.editingStyle = UITableViewCellEditingStyleNone;
+    self.editable = NO;
+    self.moveable = NO;
+
 	return self;
 }
 
