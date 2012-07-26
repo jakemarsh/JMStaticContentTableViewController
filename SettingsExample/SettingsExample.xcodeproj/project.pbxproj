@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		30595806156BC8CB001FCE1F /* WifiNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 30595805156BC8CB001FCE1F /* WifiNetwork.m */; };
+		30595809156BC8F9001FCE1F /* WifiNetworkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30595808156BC8F9001FCE1F /* WifiNetworkTableViewCell.m */; };
+		3059580C156BDB1A001FCE1F /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059580B156BDB19001FCE1F /* NotificationsViewController.m */; };
+		30E38B3C1440DFA500552550 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E38B3B1440DFA500552550 /* UIKit.framework */; };
+		30E38B3E1440DFA500552550 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E38B3D1440DFA500552550 /* Foundation.framework */; };
+		30E38B401440DFA500552550 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E38B3F1440DFA500552550 /* CoreGraphics.framework */; };
+		30E38B461440DFA500552550 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30E38B441440DFA500552550 /* InfoPlist.strings */; };
+		30E38B481440DFA500552550 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B471440DFA500552550 /* main.m */; };
+		30E38B4C1440DFA500552550 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B4B1440DFA500552550 /* AppDelegate.m */; };
+		30E38B581440DFE100552550 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B571440DFE100552550 /* SettingsViewController.m */; };
+		30E38B641440E03100552550 /* JMStaticContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B5D1440E03100552550 /* JMStaticContentTableViewCell.m */; };
+		30E38B651440E03100552550 /* JMStaticContentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B5F1440E03100552550 /* JMStaticContentTableViewController.m */; };
+		30E38B661440E03100552550 /* JMStaticContentTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B611440E03100552550 /* JMStaticContentTableViewSection.m */; };
+		30E38B671440E03100552550 /* StaticTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B631440E03100552550 /* StaticTextFieldTableViewCell.m */; };
+		30E38B97144220A700552550 /* Mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38B77144220A700552550 /* Mail.png */; };
+		30E38B98144220A700552550 /* Mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38B78144220A700552550 /* Mail@2x.png */; };
+		30E38BA3144220A700552550 /* Photos.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38B83144220A700552550 /* Photos.png */; };
+		30E38BA4144220A700552550 /* Photos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38B84144220A700552550 /* Photos@2x.png */; };
+		30E38BA5144220A700552550 /* Notifications.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38B85144220A700552550 /* Notifications.png */; };
+		30E38BA6144220A700552550 /* Notifications@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38B86144220A700552550 /* Notifications@2x.png */; };
+		30E38BAA1442249D00552550 /* Notes.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38BA91442249D00552550 /* Notes.png */; };
+		30E38BAC144224CA00552550 /* Phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38BAB144224CA00552550 /* Phone.png */; };
+		30E38BAF1442250A00552550 /* Music.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38BAD1442250A00552550 /* Music.png */; };
+		30E38BB01442250A00552550 /* Video.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38BAE1442250A00552550 /* Video.png */; };
+		30E38BB21442252F00552550 /* Messages.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38BB11442252F00552550 /* Messages.png */; };
+		30E38BB41442256000552550 /* AppStore.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38BB31442256000552550 /* AppStore.png */; };
+		30E38BB61442257900552550 /* Safari.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38BB51442257900552550 /* Safari.png */; };
+		30E38BB8144225AC00552550 /* General.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38BB7144225AC00552550 /* General.png */; };
+		30E38BBC1442261700552550 /* AirplaneMode.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38BB91442261700552550 /* AirplaneMode.png */; };
+		30E38BBD1442261700552550 /* Brightness.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38BBA1442261700552550 /* Brightness.png */; };
+		30E38BBE1442261700552550 /* Sounds.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38BBB1442261700552550 /* Sounds.png */; };
+		30E38BC11442366300552550 /* WifiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38BC01442366300552550 /* WifiViewController.m */; };
+		30E38BC414427CDA00552550 /* UIPreferencesBlueCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38BC214427CDA00552550 /* UIPreferencesBlueCheck.png */; };
+		30E38BC514427CDA00552550 /* UIPreferencesBlueCheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38BC314427CDA00552550 /* UIPreferencesBlueCheck@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		30595804156BC8CB001FCE1F /* WifiNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiNetwork.h; sourceTree = "<group>"; };
+		30595805156BC8CB001FCE1F /* WifiNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiNetwork.m; sourceTree = "<group>"; };
+		30595807156BC8F9001FCE1F /* WifiNetworkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiNetworkTableViewCell.h; sourceTree = "<group>"; };
+		30595808156BC8F9001FCE1F /* WifiNetworkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiNetworkTableViewCell.m; sourceTree = "<group>"; };
+		3059580A156BDB18001FCE1F /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
+		3059580B156BDB19001FCE1F /* NotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
+		30E38B371440DFA500552550 /* SettingsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SettingsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30E38B3B1440DFA500552550 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		30E38B3D1440DFA500552550 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		30E38B3F1440DFA500552550 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		30E38B431440DFA500552550 /* SettingsExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SettingsExample-Info.plist"; sourceTree = "<group>"; };
+		30E38B451440DFA500552550 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		30E38B471440DFA500552550 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		30E38B491440DFA500552550 /* SettingsExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SettingsExample-Prefix.pch"; sourceTree = "<group>"; };
+		30E38B4A1440DFA500552550 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		30E38B4B1440DFA500552550 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		30E38B561440DFE100552550 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		30E38B571440DFE100552550 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		30E38B5B1440E03100552550 /* JMStaticContentTableViewBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTableViewBlocks.h; sourceTree = "<group>"; };
+		30E38B5C1440E03100552550 /* JMStaticContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTableViewCell.h; sourceTree = "<group>"; };
+		30E38B5D1440E03100552550 /* JMStaticContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTableViewCell.m; sourceTree = "<group>"; };
+		30E38B5E1440E03100552550 /* JMStaticContentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTableViewController.h; sourceTree = "<group>"; };
+		30E38B5F1440E03100552550 /* JMStaticContentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTableViewController.m; sourceTree = "<group>"; };
+		30E38B601440E03100552550 /* JMStaticContentTableViewSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTableViewSection.h; sourceTree = "<group>"; };
+		30E38B611440E03100552550 /* JMStaticContentTableViewSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTableViewSection.m; sourceTree = "<group>"; };
+		30E38B621440E03100552550 /* StaticTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		30E38B631440E03100552550 /* StaticTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		30E38B77144220A700552550 /* Mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mail.png; sourceTree = "<group>"; };
+		30E38B78144220A700552550 /* Mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mail@2x.png"; sourceTree = "<group>"; };
+		30E38B83144220A700552550 /* Photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Photos.png; sourceTree = "<group>"; };
+		30E38B84144220A700552550 /* Photos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Photos@2x.png"; sourceTree = "<group>"; };
+		30E38B85144220A700552550 /* Notifications.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notifications.png; sourceTree = "<group>"; };
+		30E38B86144220A700552550 /* Notifications@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Notifications@2x.png"; sourceTree = "<group>"; };
+		30E38BA91442249D00552550 /* Notes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notes.png; sourceTree = "<group>"; };
+		30E38BAB144224CA00552550 /* Phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phone.png; sourceTree = "<group>"; };
+		30E38BAD1442250A00552550 /* Music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Music.png; sourceTree = "<group>"; };
+		30E38BAE1442250A00552550 /* Video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Video.png; sourceTree = "<group>"; };
+		30E38BB11442252F00552550 /* Messages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Messages.png; sourceTree = "<group>"; };
+		30E38BB31442256000552550 /* AppStore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppStore.png; sourceTree = "<group>"; };
+		30E38BB51442257900552550 /* Safari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Safari.png; sourceTree = "<group>"; };
+		30E38BB7144225AC00552550 /* General.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = General.png; sourceTree = "<group>"; };
+		30E38BB91442261700552550 /* AirplaneMode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AirplaneMode.png; sourceTree = "<group>"; };
+		30E38BBA1442261700552550 /* Brightness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Brightness.png; sourceTree = "<group>"; };
+		30E38BBB1442261700552550 /* Sounds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sounds.png; sourceTree = "<group>"; };
+		30E38BBF1442366300552550 /* WifiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiViewController.h; sourceTree = "<group>"; };
+		30E38BC01442366300552550 /* WifiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiViewController.m; sourceTree = "<group>"; };
+		30E38BC214427CDA00552550 /* UIPreferencesBlueCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIPreferencesBlueCheck.png; sourceTree = "<group>"; };
+		30E38BC314427CDA00552550 /* UIPreferencesBlueCheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIPreferencesBlueCheck@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30E38B341440DFA500552550 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30E38B3C1440DFA500552550 /* UIKit.framework in Frameworks */,
+				30E38B3E1440DFA500552550 /* Foundation.framework in Frameworks */,
+				30E38B401440DFA500552550 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		30E38B2C1440DFA500552550 = {
+			isa = PBXGroup;
+			children = (
+				30E38B411440DFA500552550 /* SettingsExample */,
+				30E38B3A1440DFA500552550 /* Frameworks */,
+				30E38B381440DFA500552550 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		30E38B381440DFA500552550 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30E38B371440DFA500552550 /* SettingsExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		30E38B3A1440DFA500552550 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30E38B3B1440DFA500552550 /* UIKit.framework */,
+				30E38B3D1440DFA500552550 /* Foundation.framework */,
+				30E38B3F1440DFA500552550 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30E38B411440DFA500552550 /* SettingsExample */ = {
+			isa = PBXGroup;
+			children = (
+				30E38B5A1440E03100552550 /* JMStaticContentTableViewController */,
+				30E38B4A1440DFA500552550 /* AppDelegate.h */,
+				30E38B4B1440DFA500552550 /* AppDelegate.m */,
+				30E38B561440DFE100552550 /* SettingsViewController.h */,
+				30E38B571440DFE100552550 /* SettingsViewController.m */,
+				30E38BBF1442366300552550 /* WifiViewController.h */,
+				30E38BC01442366300552550 /* WifiViewController.m */,
+				30595804156BC8CB001FCE1F /* WifiNetwork.h */,
+				30595805156BC8CB001FCE1F /* WifiNetwork.m */,
+				30595807156BC8F9001FCE1F /* WifiNetworkTableViewCell.h */,
+				30595808156BC8F9001FCE1F /* WifiNetworkTableViewCell.m */,
+				3059580A156BDB18001FCE1F /* NotificationsViewController.h */,
+				3059580B156BDB19001FCE1F /* NotificationsViewController.m */,
+				30E38B421440DFA500552550 /* Supporting Files */,
+			);
+			path = SettingsExample;
+			sourceTree = "<group>";
+		};
+		30E38B421440DFA500552550 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				30E38B68144220A700552550 /* Images */,
+				30E38B431440DFA500552550 /* SettingsExample-Info.plist */,
+				30E38B441440DFA500552550 /* InfoPlist.strings */,
+				30E38B471440DFA500552550 /* main.m */,
+				30E38B491440DFA500552550 /* SettingsExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		30E38B5A1440E03100552550 /* JMStaticContentTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				30E38B5B1440E03100552550 /* JMStaticContentTableViewBlocks.h */,
+				30E38B5C1440E03100552550 /* JMStaticContentTableViewCell.h */,
+				30E38B5D1440E03100552550 /* JMStaticContentTableViewCell.m */,
+				30E38B5E1440E03100552550 /* JMStaticContentTableViewController.h */,
+				30E38B5F1440E03100552550 /* JMStaticContentTableViewController.m */,
+				30E38B601440E03100552550 /* JMStaticContentTableViewSection.h */,
+				30E38B611440E03100552550 /* JMStaticContentTableViewSection.m */,
+				30E38B621440E03100552550 /* StaticTextFieldTableViewCell.h */,
+				30E38B631440E03100552550 /* StaticTextFieldTableViewCell.m */,
+			);
+			name = JMStaticContentTableViewController;
+			path = ../../JMStaticContentTableViewController;
+			sourceTree = "<group>";
+		};
+		30E38B68144220A700552550 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				30E38BC214427CDA00552550 /* UIPreferencesBlueCheck.png */,
+				30E38BC314427CDA00552550 /* UIPreferencesBlueCheck@2x.png */,
+				30E38BB91442261700552550 /* AirplaneMode.png */,
+				30E38BBA1442261700552550 /* Brightness.png */,
+				30E38BBB1442261700552550 /* Sounds.png */,
+				30E38BB7144225AC00552550 /* General.png */,
+				30E38BB51442257900552550 /* Safari.png */,
+				30E38BB31442256000552550 /* AppStore.png */,
+				30E38BB11442252F00552550 /* Messages.png */,
+				30E38BAD1442250A00552550 /* Music.png */,
+				30E38BAE1442250A00552550 /* Video.png */,
+				30E38BAB144224CA00552550 /* Phone.png */,
+				30E38BA91442249D00552550 /* Notes.png */,
+				30E38B77144220A700552550 /* Mail.png */,
+				30E38B78144220A700552550 /* Mail@2x.png */,
+				30E38B83144220A700552550 /* Photos.png */,
+				30E38B84144220A700552550 /* Photos@2x.png */,
+				30E38B85144220A700552550 /* Notifications.png */,
+				30E38B86144220A700552550 /* Notifications@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		30E38B361440DFA500552550 /* SettingsExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30E38B4F1440DFA500552550 /* Build configuration list for PBXNativeTarget "SettingsExample" */;
+			buildPhases = (
+				30E38B331440DFA500552550 /* Sources */,
+				30E38B341440DFA500552550 /* Frameworks */,
+				30E38B351440DFA500552550 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SettingsExample;
+			productName = SettingsExample;
+			productReference = 30E38B371440DFA500552550 /* SettingsExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		30E38B2E1440DFA500552550 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Rubber Duck Software";
+			};
+			buildConfigurationList = 30E38B311440DFA500552550 /* Build configuration list for PBXProject "SettingsExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 30E38B2C1440DFA500552550;
+			productRefGroup = 30E38B381440DFA500552550 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				30E38B361440DFA500552550 /* SettingsExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30E38B351440DFA500552550 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30E38B461440DFA500552550 /* InfoPlist.strings in Resources */,
+				30E38B97144220A700552550 /* Mail.png in Resources */,
+				30E38B98144220A700552550 /* Mail@2x.png in Resources */,
+				30E38BA3144220A700552550 /* Photos.png in Resources */,
+				30E38BA4144220A700552550 /* Photos@2x.png in Resources */,
+				30E38BA5144220A700552550 /* Notifications.png in Resources */,
+				30E38BA6144220A700552550 /* Notifications@2x.png in Resources */,
+				30E38BAA1442249D00552550 /* Notes.png in Resources */,
+				30E38BAC144224CA00552550 /* Phone.png in Resources */,
+				30E38BAF1442250A00552550 /* Music.png in Resources */,
+				30E38BB01442250A00552550 /* Video.png in Resources */,
+				30E38BB21442252F00552550 /* Messages.png in Resources */,
+				30E38BB41442256000552550 /* AppStore.png in Resources */,
+				30E38BB61442257900552550 /* Safari.png in Resources */,
+				30E38BB8144225AC00552550 /* General.png in Resources */,
+				30E38BBC1442261700552550 /* AirplaneMode.png in Resources */,
+				30E38BBD1442261700552550 /* Brightness.png in Resources */,
+				30E38BBE1442261700552550 /* Sounds.png in Resources */,
+				30E38BC414427CDA00552550 /* UIPreferencesBlueCheck.png in Resources */,
+				30E38BC514427CDA00552550 /* UIPreferencesBlueCheck@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		30E38B331440DFA500552550 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30E38B481440DFA500552550 /* main.m in Sources */,
+				30E38B4C1440DFA500552550 /* AppDelegate.m in Sources */,
+				30E38B581440DFE100552550 /* SettingsViewController.m in Sources */,
+				30E38B641440E03100552550 /* JMStaticContentTableViewCell.m in Sources */,
+				30E38B651440E03100552550 /* JMStaticContentTableViewController.m in Sources */,
+				30E38B661440E03100552550 /* JMStaticContentTableViewSection.m in Sources */,
+				30E38B671440E03100552550 /* StaticTextFieldTableViewCell.m in Sources */,
+				30E38BC11442366300552550 /* WifiViewController.m in Sources */,
+				30595806156BC8CB001FCE1F /* WifiNetwork.m in Sources */,
+				30595809156BC8F9001FCE1F /* WifiNetworkTableViewCell.m in Sources */,
+				3059580C156BDB1A001FCE1F /* NotificationsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		30E38B441440DFA500552550 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30E38B451440DFA500552550 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		30E38B4D1440DFA500552550 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		30E38B4E1440DFA500552550 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		30E38B501440DFA500552550 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SettingsExample/SettingsExample-Prefix.pch";
+				INFOPLIST_FILE = "SettingsExample/SettingsExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		30E38B511440DFA500552550 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SettingsExample/SettingsExample-Prefix.pch";
+				INFOPLIST_FILE = "SettingsExample/SettingsExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		30E38B311440DFA500552550 /* Build configuration list for PBXProject "SettingsExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30E38B4D1440DFA500552550 /* Debug */,
+				30E38B4E1440DFA500552550 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30E38B4F1440DFA500552550 /* Build configuration list for PBXNativeTarget "SettingsExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30E38B501440DFA500552550 /* Debug */,
+				30E38B511440DFA500552550 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 30E38B2E1440DFA500552550 /* Project object */;
+}
