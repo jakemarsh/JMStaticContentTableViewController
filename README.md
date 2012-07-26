@@ -118,11 +118,11 @@ It is, like I mentioned, unfinished, meant mearly as a tool for you to checkout 
 ### Screenshots
 
 <center>
-<img src="http://cl.ly/IKD6/iOS%20Simulator%20Screen%20shot%20Jul%2025,%202012%207.08.00%20PM.png" width="320" style="margin: 10px;"/>
-<img src="http://cl.ly/IKjt/iOS%20Simulator%20Screen%20shot%20Jul%2025,%202012%207.08.01%20PM.png" width="320" style="margin: 10px;" />
-<img src="http://cl.ly/IKkO/iOS%20Simulator%20Screen%20shot%20Jul%2025,%202012%207.08.02%20PM.png" width="320" style="margin: 10px;" />
-<img src="http://cl.ly/IKcB/iOS%20Simulator%20Screen%20shot%20Jul%2025,%202012%207.08.04%20PM.png" width="320" style="margin: 10px;" />
-<img src="http://cl.ly/IKMS/iOS%20Simulator%20Screen%20shot%20Jul%2025,%202012%207.08.07%20PM.png" width="320" style="margin: 10px;" />
+<img src="http://cl.ly/IKD6/iOS%20Simulator%20Screen%20shot%20Jul%2025,%202012%207.08.00%20PM.png" width="320" />&nbsp;&nbsp;
+<img src="http://cl.ly/IKjt/iOS%20Simulator%20Screen%20shot%20Jul%2025,%202012%207.08.01%20PM.png" width="320" />&nbsp;&nbsp;
+<img src="http://cl.ly/IKkO/iOS%20Simulator%20Screen%20shot%20Jul%2025,%202012%207.08.02%20PM.png" width="320" />&nbsp;&nbsp;
+<img src="http://cl.ly/IKcB/iOS%20Simulator%20Screen%20shot%20Jul%2025,%202012%207.08.04%20PM.png" width="320" />&nbsp;&nbsp;
+<img src="http://cl.ly/IKMS/iOS%20Simulator%20Screen%20shot%20Jul%2025,%202012%207.08.07%20PM.png" width="320" />
 </center>
 
 
