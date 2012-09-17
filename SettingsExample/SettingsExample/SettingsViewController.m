@@ -36,6 +36,8 @@
 
 	self.airplaneModeSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
 
+    __block SettingsViewController *safeSelf = self;
+
 	[self addSection:^(JMStaticContentTableViewSection *section, NSUInteger sectionIndex) {
 		[section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
 			staticContentCell.reuseIdentifier = @"UIControlCell";
@@ -43,7 +45,7 @@
 
 			cell.textLabel.text = NSLocalizedString(@"Airplane Mode", @"Airplane Mode");
 			cell.imageView.image = [UIImage imageNamed:@"AirplaneMode"];
-			cell.accessoryView = self.airplaneModeSwitch;
+			cell.accessoryView = safeSelf.airplaneModeSwitch;
 		}];
 
 		[section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
@@ -53,14 +55,14 @@
 			cell.textLabel.text = NSLocalizedString(@"Wi-Fi", @"Wi-Fi");
 			cell.detailTextLabel.text = NSLocalizedString(@"iamtheinternet", @"iamtheinternet");
 		} whenSelected:^(NSIndexPath *indexPath) {
-			[self.navigationController pushViewController:[[WifiViewController alloc] init] animated:YES];
+			[safeSelf.navigationController pushViewController:[[WifiViewController alloc] init] animated:YES];
 		}];
 
 		[section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
 			cell.textLabel.text = NSLocalizedString(@"Notifications", @"Notifications");
 			cell.imageView.image = [UIImage imageNamed:@"Notifications"];
 		} whenSelected:^(NSIndexPath *indexPath) {
-            [self.navigationController pushViewController:[[NotificationsViewController alloc] init] animated:YES];
+            [safeSelf.navigationController pushViewController:[[NotificationsViewController alloc] init] animated:YES];
 		}];
 
 		[section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {

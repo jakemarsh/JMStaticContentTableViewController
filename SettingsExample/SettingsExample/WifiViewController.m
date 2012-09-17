@@ -96,6 +96,8 @@
 	for(NSUInteger i = 0; i < [self.simulatedNetworks count]; i++) {
 		WifiNetwork *network = [self.simulatedNetworks objectAtIndex:i];
 
+        __block WifiViewController *safeSelf = self;
+
 		[self insertCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
 			staticContentCell.reuseIdentifier = @"WifiNetworkCell";
 			staticContentCell.tableViewCellSubclass = [WifiNetworkTableViewCell class];
@@ -106,7 +108,7 @@
 			cell.indentationLevel = 2;
 			cell.indentationWidth = 10.0;
 
-			if(self.selectedNetworkIndexPath && indexPath.row == self.selectedNetworkIndexPath.row) {
+			if(safeSelf.selectedNetworkIndexPath && indexPath.row == safeSelf.selectedNetworkIndexPath.row) {
 				cell.textLabel.textColor = [UIColor colorWithRed:56.0/255.0 green:84.0/255.0 blue:135.0/255.0 alpha:1.0];
 				((WifiNetworkTableViewCell *)cell).selectedCheckmarkImageView.hidden = NO;
 				//[((WifiNetworkTableViewCell *)cell).connectingActivityIndicatorView startAnimating];
@@ -116,18 +118,19 @@
 			}
 		} whenSelected:^(NSIndexPath *indexPath) {
 			NSIndexPath *oldSelectedIndexPath = nil;
-			if(self.selectedNetworkIndexPath) {
-				oldSelectedIndexPath = [NSIndexPath indexPathForRow:self.selectedNetworkIndexPath.row inSection:self.selectedNetworkIndexPath.section];
+			if(safeSelf.selectedNetworkIndexPath) {
+				oldSelectedIndexPath = [NSIndexPath indexPathForRow:safeSelf.selectedNetworkIndexPath.row
+                                                          inSection:safeSelf.selectedNetworkIndexPath.section];
 			}
 
-			self.selectedNetworkIndexPath = indexPath;
+			safeSelf.selectedNetworkIndexPath = indexPath;
 
 			if(oldSelectedIndexPath && oldSelectedIndexPath.row != indexPath.row) {
-				[self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:oldSelectedIndexPath, indexPath, nil] 
-									  withRowAnimation:UITableViewRowAnimationAutomatic];
+				[safeSelf.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:oldSelectedIndexPath, indexPath, nil]
+                                          withRowAnimation:UITableViewRowAnimationAutomatic];
 			} else {
-				[self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] 
-									  withRowAnimation:UITableViewRowAnimationAutomatic];
+				[safeSelf.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                                          withRowAnimation:UITableViewRowAnimationAutomatic];
 			}
 		} atIndexPath:[NSIndexPath indexPathForRow:i inSection:1] animated:YES];
 	}
