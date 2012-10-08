@@ -1,6 +1,11 @@
 #import "JMStaticContentTableViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < 60000
+#define NSTextAlignmentCenter       UITextAlignmentCenter
+#endif
+
+
 @implementation JMStaticContentTableViewController
 
 @synthesize staticContentSections = _staticContentSections;
@@ -216,7 +221,7 @@
 		headerLabel.textColor = [UIColor colorWithRed:61.0/255.0 green:77.0/255.0 blue:99.0/255.0 alpha:1.0];
 		headerLabel.shadowColor = [UIColor colorWithWhite:1.0 alpha:0.65];
 		headerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
-		headerLabel.textAlignment = UITextAlignmentCenter;
+		headerLabel.textAlignment = NSTextAlignmentCenter;
 		headerLabel.numberOfLines = 0;
         
 		headerLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -266,7 +271,7 @@
 		footerLabel.textColor = [UIColor colorWithRed:61.0/255.0 green:77.0/255.0 blue:99.0/255.0 alpha:1.0];
 		footerLabel.shadowColor = [UIColor colorWithWhite:1.0 alpha:0.65];
 		footerLabel.shadowOffset = CGSizeMake(0.0, 1.0);
-		footerLabel.textAlignment = UITextAlignmentCenter;
+		footerLabel.textAlignment = NSTextAlignmentCenter;
 		footerLabel.numberOfLines = 0;
 
 		footerLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
