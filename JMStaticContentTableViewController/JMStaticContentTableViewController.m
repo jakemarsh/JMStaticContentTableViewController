@@ -47,7 +47,12 @@
 }
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:section];
-	return sectionContent.title;
+	return sectionContent.headerTitle;
+}
+
+- (NSString *) tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+	JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:section];
+	return sectionContent.footerTitle;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
