@@ -7,7 +7,8 @@
 
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, strong) NSArray *staticContentCells;
-@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *headerTitle;
+@property (nonatomic, strong) NSString *footerTitle;
 
 - (void) addCell:(JMStaticContentTableViewCellBlock)configurationBlock;
 
