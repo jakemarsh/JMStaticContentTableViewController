@@ -5,7 +5,8 @@
 
 @synthesize tableView = _tableView;
 @synthesize staticContentCells = _staticContentCells;
-@synthesize title = _title;
+@synthesize headerTitle = _headerTitle;
+@synthesize footerTitle = _footerTitle;
 
 - (void) addCell:(JMStaticContentTableViewCellBlock)configurationBlock {
 	[self addCell:configurationBlock whenSelected:nil];
