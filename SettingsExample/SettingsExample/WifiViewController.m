@@ -96,7 +96,7 @@
 	for(NSUInteger i = 0; i < [self.simulatedNetworks count]; i++) {
 		WifiNetwork *network = [self.simulatedNetworks objectAtIndex:i];
 
-        __block WifiViewController *safeSelf = self;
+        __unsafe_unretained __block WifiViewController *safeSelf = self;
 
 		[self insertCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
 			staticContentCell.reuseIdentifier = @"WifiNetworkCell";
@@ -183,7 +183,7 @@
 	}];
 
 	[self addSection:^(JMStaticContentTableViewSection *section, NSUInteger sectionIndex) {
-		section.title = NSLocalizedString(@"Choose a Network...", @"Choose a Network...");
+		section.headerTitle = NSLocalizedString(@"Choose a Network...", @"Choose a Network...");
 
 		[section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
 			staticContentCell.reuseIdentifier = @"WifiNetworkOtherCell";
