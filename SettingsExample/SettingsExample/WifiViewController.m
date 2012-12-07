@@ -183,7 +183,7 @@
 	}];
 
 	[self addSection:^(JMStaticContentTableViewSection *section, NSUInteger sectionIndex) {
-		section.title = NSLocalizedString(@"Choose a Network...", @"Choose a Network...");
+		section.headerTitle = NSLocalizedString(@"Choose a Network...", @"Choose a Network...");
 
 		[section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
 			staticContentCell.reuseIdentifier = @"WifiNetworkOtherCell";
