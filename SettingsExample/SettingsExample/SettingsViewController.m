@@ -36,7 +36,7 @@
 
 	self.airplaneModeSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
 
-    __block SettingsViewController *safeSelf = self;
+    __unsafe_unretained __block SettingsViewController *safeSelf = self;
 
 	[self addSection:^(JMStaticContentTableViewSection *section, NSUInteger sectionIndex) {
 		[section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {

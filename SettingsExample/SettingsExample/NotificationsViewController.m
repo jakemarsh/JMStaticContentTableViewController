@@ -31,7 +31,7 @@
     self.headerText = NSLocalizedString(@"Swipe down from the top of the screen to\nview Notification Center.", @"Swipe down from the top of the screen to\nview Notification Center.");
 
     [self addSection:^(JMStaticContentTableViewSection *section, NSUInteger sectionIndex) {
-        section.title = NSLocalizedString(@"Sort Apps:", @"Sort Apps":);
+        section.headerTitle = NSLocalizedString(@"Sort Apps:", @"Sort Apps":);
 
         [section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
             cell.textLabel.text = NSLocalizedString(@"Manually", @"Manually");
@@ -49,7 +49,7 @@
     }];
 
     [self addSection:^(JMStaticContentTableViewSection *section, NSUInteger sectionIndex) {
-        section.title = NSLocalizedString(@"In Notification Center", @"In Notification Center");
+        section.headerTitle = NSLocalizedString(@"In Notification Center", @"In Notification Center");
         
         [section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
             cell.textLabel.text = NSLocalizedString(@"Weather Widget", @"Weather Widget");
@@ -59,7 +59,7 @@
     }];
 
     [self addSection:^(JMStaticContentTableViewSection *section, NSUInteger sectionIndex) {
-        section.title = NSLocalizedString(@"Not In Notification Center", @"Not In Notification Center");
+        section.headerTitle = NSLocalizedString(@"Not In Notification Center", @"Not In Notification Center");
     }];
 
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
