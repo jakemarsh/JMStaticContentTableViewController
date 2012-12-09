@@ -45,11 +45,11 @@
 
 	return cellContent.cellHeight;
 }
+
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:section];
 	return sectionContent.headerTitle;
 }
-
 - (NSString *) tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
 	JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:section];
 	return sectionContent.footerTitle;
@@ -89,7 +89,6 @@
 
     return cellContent.editable;
 }
-
 
 - (BOOL) tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
 	JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:indexPath.section];
@@ -176,6 +175,14 @@
 		[self.tableView reloadData];
 	}
 }
+
+- (void) reloadSectionAtIndex:(NSUInteger)sectionIndex {
+	[self reloadSectionAtIndex:sectionIndex animated:YES];
+}
+- (void) reloadSectionAtIndex:(NSUInteger)sectionIndex animated:(BOOL)animated {
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:animated ? UITableViewRowAnimationAutomatic : UITableViewRowAnimationNone];
+}
+
 
 - (JMStaticContentTableViewSection *) sectionAtIndex:(NSUInteger)sectionIndex {
 	return [self.staticContentSections objectAtIndex:sectionIndex];

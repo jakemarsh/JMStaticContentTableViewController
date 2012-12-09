@@ -24,6 +24,9 @@
 - (void) removeSectionAtIndex:(NSUInteger)sectionIndex;
 - (void) removeSectionAtIndex:(NSUInteger)sectionIndex animated:(BOOL)animated;
 
+- (void) reloadSectionAtIndex:(NSUInteger)sectionIndex;
+- (void) reloadSectionAtIndex:(NSUInteger)sectionIndex animated:(BOOL)animated;
+
 - (JMStaticContentTableViewSection *) sectionAtIndex:(NSUInteger)sectionIndex;
 
 - (void) insertCell:(JMStaticContentTableViewCellBlock)configurationBlock 
