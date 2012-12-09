@@ -16,10 +16,16 @@
 - (void) addCell:(JMStaticContentTableViewCellBlock)configurationBlock
 	whenSelected:(JMStaticContentTableViewCellWhenSelectedBlock)whenSelectedBlock;
 
+- (void) addCell:(JMStaticContentTableViewCellBlock)configurationBlock
+        animated:(BOOL)animated;
+
 - (void) insertCell:(JMStaticContentTableViewCellBlock)configurationBlock
 	   whenSelected:(JMStaticContentTableViewCellWhenSelectedBlock)whenSelectedBlock
 		atIndexPath:(NSIndexPath *)indexPath
 		   animated:(BOOL)animated;
+
+- (void) reloadCellAtIndex:(NSUInteger)rowIndex;
+- (void) reloadCellAtIndex:(NSUInteger)rowIndex animated:(BOOL)animated;
 
 - (void) removeAllCells;
 - (void) removeCellAtIndex:(NSUInteger)rowIndex;

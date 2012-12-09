@@ -53,6 +53,40 @@
 	}
 }
 
+- (void) addCell:(JMStaticContentTableViewCellBlock)configurationBlock
+		   animated:(BOOL)animated {
+
+	if(!self.staticContentCells) self.staticContentCells = [NSArray array];
+
+	NSMutableArray *mutableCells = [self.staticContentCells mutableCopy];
+
+	JMStaticContentTableViewCell *staticContentCell = [[JMStaticContentTableViewCell alloc] init];
+
+	staticContentCell.configureBlock = configurationBlock;
+    staticContentCell.indexPath = [NSIndexPath indexPathForRow:[self.staticContentCells count] inSection:self.sectionIndex];
+
+	configurationBlock(staticContentCell, nil, staticContentCell.indexPath);
+
+	[mutableCells addObject:staticContentCell];
+
+	self.staticContentCells = [NSArray arrayWithArray:mutableCells];
+
+	if(animated) {
+		[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:staticContentCell.indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+	} else {
+		[self.tableView reloadData];
+	}
+}
+
+- (void) reloadCellAtIndex:(NSUInteger)rowIndex {
+    [self reloadCellAtIndex:rowIndex animated:YES];
+}
+
+- (void) reloadCellAtIndex:(NSUInteger)rowIndex animated:(BOOL)animated {
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:rowIndex inSection:self.sectionIndex]]
+                          withRowAnimation:animated ? UITableViewRowAnimationAutomatic : UITableViewRowAnimationNone];
+}
+
 - (void) removeCellAtIndex:(NSUInteger)rowIndex {
 	[self removeCellAtIndex:rowIndex animated:YES];
 }
