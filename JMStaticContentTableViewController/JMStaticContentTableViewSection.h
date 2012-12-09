@@ -9,6 +9,7 @@
 @property (nonatomic, strong) NSArray *staticContentCells;
 @property (nonatomic, strong) NSString *headerTitle;
 @property (nonatomic, strong) NSString *footerTitle;
+@property (nonatomic) NSInteger sectionIndex;
 
 - (void) addCell:(JMStaticContentTableViewCellBlock)configurationBlock;
 

@@ -126,8 +126,9 @@
 	
 	JMStaticContentTableViewSection *section = [[JMStaticContentTableViewSection alloc] init];
 	section.tableView = self.tableView;
-	
-	b(section, [self.staticContentSections count] + 1);
+    section.sectionIndex = [self.staticContentSections count];
+
+	b(section, section.sectionIndex);
 	
 	self.staticContentSections = [self.staticContentSections arrayByAddingObject:section];
 }
