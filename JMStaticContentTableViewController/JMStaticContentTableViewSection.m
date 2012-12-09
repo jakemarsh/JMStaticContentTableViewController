@@ -98,11 +98,7 @@
 	self.staticContentCells = [NSArray arrayWithArray:cells];
 
 	if(animated) {
-		[self.tableView beginUpdates];
-
 		[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:rowIndex inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-
-		[self.tableView endUpdates];
 	} else {
 		[self.tableView reloadData];
 	}
