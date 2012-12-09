@@ -4,6 +4,8 @@
 @interface JMStaticContentTableViewCell : NSObject
 
 @property (nonatomic, strong) NSString *reuseIdentifier;
+@property (nonatomic, strong) NSIndexPath *indexPath;
+
 @property (nonatomic) CGFloat cellHeight;
 @property (nonatomic) UITableViewCellStyle cellStyle;
 @property (nonatomic, strong) Class tableViewCellSubclass;

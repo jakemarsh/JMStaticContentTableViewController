@@ -38,15 +38,16 @@
 
 	staticContentCell.configureBlock = configurationBlock;
 	staticContentCell.whenSelectedBlock = whenSelectedBlock;
+    staticContentCell.indexPath = indexPath;
 
-	configurationBlock(staticContentCell, nil, nil);
+	configurationBlock(staticContentCell, nil, indexPath);
 
 	[mutableCells insertObject:staticContentCell atIndex:indexPath.row];
 
 	self.staticContentCells = [NSArray arrayWithArray:mutableCells];
 
 	if(animated) {
-		[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+		[self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 	} else {
 		[self.tableView reloadData];
 	}
