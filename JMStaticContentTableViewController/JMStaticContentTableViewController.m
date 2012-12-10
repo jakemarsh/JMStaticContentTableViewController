@@ -114,6 +114,14 @@
 
 #pragma mark - Static Content
 
+- (void) _updateSectionIndexes {
+    NSInteger updatedIndex = 0;
+    for(JMStaticContentTableViewSection *section in self.staticContentSections) {
+        section.sectionIndex = updatedIndex;
+        updatedIndex++;
+    }
+}
+
 - (void) removeAllSections {
 	if(self.staticContentSections) {
 		self.staticContentSections = nil;
@@ -129,8 +137,10 @@
     section.sectionIndex = [self.staticContentSections count];
 
 	b(section, section.sectionIndex);
-	
+
 	self.staticContentSections = [self.staticContentSections arrayByAddingObject:section];
+
+    [self _updateSectionIndexes];
 }
 
 - (void) insertSection:(JMStaticContentTableViewControllerAddSectionBlock)b atIndex:(NSUInteger)sectionIndex {
@@ -149,6 +159,8 @@
 
 	self.staticContentSections = [NSArray arrayWithArray:mutableSections];
 
+    [self _updateSectionIndexes];
+
 	if(animated) {
 		[self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
 	} else {
@@ -165,7 +177,9 @@
 	[sections removeObjectAtIndex:sectionIndex];
 	
 	self.staticContentSections = [NSArray arrayWithArray:sections];
-	
+
+    [self _updateSectionIndexes];
+
 	if(animated) {
 		[self.tableView beginUpdates];
 
@@ -183,7 +197,6 @@
 - (void) reloadSectionAtIndex:(NSUInteger)sectionIndex animated:(BOOL)animated {
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:animated ? UITableViewRowAnimationAutomatic : UITableViewRowAnimationNone];
 }
-
 
 - (JMStaticContentTableViewSection *) sectionAtIndex:(NSUInteger)sectionIndex {
 	return [self.staticContentSections objectAtIndex:sectionIndex];
