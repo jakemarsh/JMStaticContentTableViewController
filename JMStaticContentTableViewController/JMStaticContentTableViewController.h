@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "JMStaticContentTableViewSection.h"
 #import "JMStaticContentTableViewCell.h"
-#import "StaticTextFieldTableViewCell.h"
+#import "JMStaticContentTextFieldTableViewCell.h"
 #import "JMStaticContentTableViewBlocks.h"
 
 @interface JMStaticContentTableViewController : UITableViewController

@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "JMStaticContentTableViewCell.h"
 
-@interface StaticTextFieldTableViewCell : JMStaticContentTableViewCell
+@interface JMStaticContentTextFieldTableViewCell : JMStaticContentTableViewCell
 
 @property (nonatomic, strong) UITextField *contentTextField;
 

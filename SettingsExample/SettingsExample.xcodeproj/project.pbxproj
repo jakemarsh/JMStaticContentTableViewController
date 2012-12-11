@@ -20,7 +20,7 @@
 		30E38B641440E03100552550 /* JMStaticContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B5D1440E03100552550 /* JMStaticContentTableViewCell.m */; };
 		30E38B651440E03100552550 /* JMStaticContentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B5F1440E03100552550 /* JMStaticContentTableViewController.m */; };
 		30E38B661440E03100552550 /* JMStaticContentTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B611440E03100552550 /* JMStaticContentTableViewSection.m */; };
-		30E38B671440E03100552550 /* StaticTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B631440E03100552550 /* StaticTextFieldTableViewCell.m */; };
+		30E38B671440E03100552550 /* JMStaticContentTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B631440E03100552550 /* JMStaticContentTextFieldTableViewCell.m */; };
 		30E38B97144220A700552550 /* Mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38B77144220A700552550 /* Mail.png */; };
 		30E38B98144220A700552550 /* Mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38B78144220A700552550 /* Mail@2x.png */; };
 		30E38BA3144220A700552550 /* Photos.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38B83144220A700552550 /* Photos.png */; };
@@ -69,8 +69,8 @@
 		30E38B5F1440E03100552550 /* JMStaticContentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTableViewController.m; sourceTree = "<group>"; };
 		30E38B601440E03100552550 /* JMStaticContentTableViewSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTableViewSection.h; sourceTree = "<group>"; };
 		30E38B611440E03100552550 /* JMStaticContentTableViewSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTableViewSection.m; sourceTree = "<group>"; };
-		30E38B621440E03100552550 /* StaticTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticTextFieldTableViewCell.h; sourceTree = "<group>"; };
-		30E38B631440E03100552550 /* StaticTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		30E38B621440E03100552550 /* JMStaticContentTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		30E38B631440E03100552550 /* JMStaticContentTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTextFieldTableViewCell.m; sourceTree = "<group>"; };
 		30E38B77144220A700552550 /* Mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mail.png; sourceTree = "<group>"; };
 		30E38B78144220A700552550 /* Mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mail@2x.png"; sourceTree = "<group>"; };
 		30E38B83144220A700552550 /* Photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Photos.png; sourceTree = "<group>"; };
@@ -178,8 +178,8 @@
 				30E38B5F1440E03100552550 /* JMStaticContentTableViewController.m */,
 				30E38B601440E03100552550 /* JMStaticContentTableViewSection.h */,
 				30E38B611440E03100552550 /* JMStaticContentTableViewSection.m */,
-				30E38B621440E03100552550 /* StaticTextFieldTableViewCell.h */,
-				30E38B631440E03100552550 /* StaticTextFieldTableViewCell.m */,
+				30E38B621440E03100552550 /* JMStaticContentTextFieldTableViewCell.h */,
+				30E38B631440E03100552550 /* JMStaticContentTextFieldTableViewCell.m */,
 			);
 			name = JMStaticContentTableViewController;
 			path = ../../JMStaticContentTableViewController;
@@ -298,7 +298,7 @@
 				30E38B641440E03100552550 /* JMStaticContentTableViewCell.m in Sources */,
 				30E38B651440E03100552550 /* JMStaticContentTableViewController.m in Sources */,
 				30E38B661440E03100552550 /* JMStaticContentTableViewSection.m in Sources */,
-				30E38B671440E03100552550 /* StaticTextFieldTableViewCell.m in Sources */,
+				30E38B671440E03100552550 /* JMStaticContentTextFieldTableViewCell.m in Sources */,
 				30E38BC11442366300552550 /* WifiViewController.m in Sources */,
 				30595806156BC8CB001FCE1F /* WifiNetwork.m in Sources */,
 				30595809156BC8F9001FCE1F /* WifiNetworkTableViewCell.m in Sources */,
