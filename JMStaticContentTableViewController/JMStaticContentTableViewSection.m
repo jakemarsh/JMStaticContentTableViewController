@@ -111,4 +111,20 @@
 	}
 }
 
+- (NSString *) description {
+    NSMutableString *str = [NSMutableString stringWithString:@"<JMStaticContentTableViewSection"];
+
+    [str appendFormat:@" sectionIndex='%d'", self.sectionIndex];
+    if(self.headerTitle) [str appendFormat:@" headerTitle='%@'", self.headerTitle];
+    if(self.footerTitle) [str appendFormat:@" footerTitle='%@'", self.footerTitle];
+
+    for(JMStaticContentTableViewCell *cell in self.staticContentCells) {
+        [str appendFormat:@"\n      %@", [cell description]];
+    }
+
+    [str appendString:@"\n>"];
+
+    return [NSString stringWithString:str];
+}
+
 @end

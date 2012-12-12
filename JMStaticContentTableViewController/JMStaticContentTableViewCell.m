@@ -30,4 +30,16 @@
 	return self;
 }
 
+- (NSString *) description {
+    NSMutableString *str = [NSMutableString stringWithString:@"<JMStaticContentTableViewCell"];
+
+    [str appendFormat:@" reuseIdentifier='%@'", self.reuseIdentifier];
+    [str appendFormat:@" tableViewCellSubclass='%@'", self.tableViewCellSubclass];
+    [str appendFormat:@" cellHeight='%f'", self.cellHeight];
+
+    [str appendString:@">"];
+
+    return [NSString stringWithString:str];
+}
+
 @end
