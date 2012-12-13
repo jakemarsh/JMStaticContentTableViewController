@@ -69,7 +69,7 @@
 	cell.accessoryView = nil;
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
-	cellContent.configureBlock(nil, cell, indexPath);
+	cellContent.configureBlock(cellContent, cell, indexPath);
 
     return cell;
 }
