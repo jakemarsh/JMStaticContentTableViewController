@@ -22,7 +22,9 @@
 
 	configurationBlock(staticContentCell, nil, nil);
 
-	self.staticContentCells = [self.staticContentCells arrayByAddingObject:staticContentCell];	
+	self.staticContentCells = [self.staticContentCells arrayByAddingObject:staticContentCell];
+
+    [self _updateCellIndexPaths];
 }
 
 - (void) insertCell:(JMStaticContentTableViewCellBlock)configurationBlock
@@ -45,6 +47,8 @@
 	[mutableCells insertObject:staticContentCell atIndex:indexPath.row];
 
 	self.staticContentCells = [NSArray arrayWithArray:mutableCells];
+
+    [self _updateCellIndexPaths];
 
 	if(animated) {
 		[self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -83,6 +87,8 @@
 }
 
 - (void) reloadCellAtIndex:(NSUInteger)rowIndex animated:(BOOL)animated {
+    [self _updateCellIndexPaths];
+
     [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:rowIndex inSection:self.sectionIndex]]
                           withRowAnimation:animated ? UITableViewRowAnimationAutomatic : UITableViewRowAnimationNone];
 }
@@ -98,7 +104,10 @@
 	self.staticContentCells = [NSArray arrayWithArray:cells];
 
 	if(animated) {
-		[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:rowIndex inSection:self.sectionIndex]] withRowAnimation:UITableViewRowAnimationAutomatic];
+		[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:rowIndex inSection:self.sectionIndex]]
+                              withRowAnimation:UITableViewRowAnimationAutomatic];
+
+        [self.tableView performSelector:@selector(reloadData) withObject:nil afterDelay:0.4];
 	} else {
 		[self.tableView reloadData];
 	}
@@ -125,6 +134,14 @@
     [str appendString:@"\n>"];
 
     return [NSString stringWithString:str];
+}
+
+- (void) _updateCellIndexPaths {
+    NSInteger updatedRowIndex = 0;
+    for(JMStaticContentTableViewCell *cell in self.staticContentCells) {
+        cell.indexPath = [NSIndexPath indexPathForRow:updatedRowIndex inSection:self.sectionIndex];
+        updatedRowIndex++;
+    }
 }
 
 @end
