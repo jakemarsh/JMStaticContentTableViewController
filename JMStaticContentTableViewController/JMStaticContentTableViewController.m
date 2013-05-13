@@ -175,7 +175,7 @@
 	NSMutableArray *sections = [self.staticContentSections mutableCopy];
 
 	[sections removeObjectAtIndex:sectionIndex];
-	
+
 	self.staticContentSections = [NSArray arrayWithArray:sections];
 
     [self _updateSectionIndexes];
