@@ -157,7 +157,7 @@ Add all of the files inside the folder named "JMStaticContentTableViewController
 
 ### "This Library is Bad, and You Should Feel Bad"
 
-<center><img src="http://cdn.memegenerator.net/instances/400x/23854749.jpg" title="This Library is Bad, and You Should Feel Bad" /></center>
+<center><img src="http://cl.ly/Oun7/Unknown.jpeg" title="This Library is Bad, and You Should Feel Bad" /></center>
 
 This is my first try at building a system like this for this purpose, there are already a ton of things I plan on "fixing", improving, and re-doing. I wouldn't really be a good developer if I didn't hate all my code once I was done would ? ;)
 
