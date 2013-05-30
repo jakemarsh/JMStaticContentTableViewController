@@ -19,6 +19,10 @@
 			   atIndex:(NSUInteger)sectionIndex 
 			  animated:(BOOL)animated;
 
+- (void) insertSection:(JMStaticContentTableViewControllerAddSectionBlock)b
+               atIndex:(NSUInteger)sectionIndex animated:(BOOL)animated
+            updateView:(BOOL)updateView;
+
 - (void) removeAllSections;
 
 - (void) removeSectionAtIndex:(NSUInteger)sectionIndex;

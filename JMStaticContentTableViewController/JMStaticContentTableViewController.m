@@ -147,6 +147,10 @@
 	[self insertSection:b atIndex:sectionIndex animated:YES];
 }
 - (void) insertSection:(JMStaticContentTableViewControllerAddSectionBlock)b atIndex:(NSUInteger)sectionIndex animated:(BOOL)animated {
+	[self insertSection:b atIndex:sectionIndex animated:YES updateView:YES];
+}
+
+- (void) insertSection:(JMStaticContentTableViewControllerAddSectionBlock)b atIndex:(NSUInteger)sectionIndex animated:(BOOL)animated updateView:(BOOL)updateView {
 	if(!self.staticContentSections) self.staticContentSections = [NSArray array];
 
 	NSMutableArray *mutableSections = [self.staticContentSections mutableCopy];
@@ -161,11 +165,13 @@
 
     [self _updateSectionIndexes];
 
-	if(animated) {
-		[self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
-	} else {
-		[self.tableView reloadData];
-	}
+    if (updateView) {
+        if(animated) {
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
+        } else {
+            [self.tableView reloadData];
+        }
+    }
 }
 
 - (void) removeSectionAtIndex:(NSUInteger)sectionIndex {

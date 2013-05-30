@@ -31,6 +31,12 @@
 	   whenSelected:(JMStaticContentTableViewCellWhenSelectedBlock)whenSelectedBlock
 		atIndexPath:(NSIndexPath *)indexPath
 		   animated:(BOOL)animated {
+    [self insertCell:configurationBlock whenSelected:whenSelectedBlock atIndexPath:indexPath animated:animated updateView:YES];
+}
+
+- (void) insertCell:(JMStaticContentTableViewCellBlock)configurationBlock
+       whenSelected:(JMStaticContentTableViewCellWhenSelectedBlock)whenSelectedBlock
+        atIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated updateView:(BOOL)updateView {
 
 	if(!self.staticContentCells) self.staticContentCells = [NSArray array];
 		
@@ -50,11 +56,13 @@
 
     [self _updateCellIndexPaths];
 
-	if(animated) {
-		[self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-	} else {
-		[self.tableView reloadData];
-	}
+    if (updateView) {
+        if(animated) {
+            [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        } else {
+            [self.tableView reloadData];
+        }
+    }
 }
 
 - (void) addCell:(JMStaticContentTableViewCellBlock)configurationBlock
