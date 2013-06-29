@@ -10,23 +10,7 @@
 		9B16CA81177F56CA00702F65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16CA80177F56CA00702F65 /* Foundation.framework */; };
 		9B16CA86177F56CA00702F65 /* JMStaticContentTable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B16CA85177F56CA00702F65 /* JMStaticContentTable.h */; };
 		9B16CA88177F56CA00702F65 /* JMStaticContentTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16CA87177F56CA00702F65 /* JMStaticContentTable.m */; };
-		9B16CA8F177F56CA00702F65 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16CA8E177F56CA00702F65 /* XCTest.framework */; };
-		9B16CA90177F56CA00702F65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16CA80177F56CA00702F65 /* Foundation.framework */; };
-		9B16CA92177F56CA00702F65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16CA91177F56CA00702F65 /* UIKit.framework */; };
-		9B16CA95177F56CA00702F65 /* libJMStaticContentTable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16CA7D177F56CA00702F65 /* libJMStaticContentTable.a */; };
-		9B16CA9B177F56CA00702F65 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B16CA99177F56CA00702F65 /* InfoPlist.strings */; };
-		9B16CA9D177F56CA00702F65 /* JMStaticContentTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16CA9C177F56CA00702F65 /* JMStaticContentTableTests.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		9B16CA93177F56CA00702F65 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9B16CA75177F56CA00702F65 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9B16CA7C177F56CA00702F65;
-			remoteInfo = JMStaticContentTable;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		9B16CA7B177F56CA00702F65 /* CopyFiles */ = {
@@ -47,12 +31,8 @@
 		9B16CA84177F56CA00702F65 /* JMStaticContentTable-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JMStaticContentTable-Prefix.pch"; sourceTree = "<group>"; };
 		9B16CA85177F56CA00702F65 /* JMStaticContentTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTable.h; sourceTree = "<group>"; };
 		9B16CA87177F56CA00702F65 /* JMStaticContentTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTable.m; sourceTree = "<group>"; };
-		9B16CA8D177F56CA00702F65 /* JMStaticContentTableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JMStaticContentTableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B16CA8E177F56CA00702F65 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9B16CA91177F56CA00702F65 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		9B16CA98177F56CA00702F65 /* JMStaticContentTableTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JMStaticContentTableTests-Info.plist"; sourceTree = "<group>"; };
-		9B16CA9A177F56CA00702F65 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9B16CA9C177F56CA00702F65 /* JMStaticContentTableTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTableTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,17 +44,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B16CA8A177F56CA00702F65 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9B16CA8F177F56CA00702F65 /* XCTest.framework in Frameworks */,
-				9B16CA95177F56CA00702F65 /* libJMStaticContentTable.a in Frameworks */,
-				9B16CA92177F56CA00702F65 /* UIKit.framework in Frameworks */,
-				9B16CA90177F56CA00702F65 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				9B16CA82177F56CA00702F65 /* JMStaticContentTable */,
-				9B16CA96177F56CA00702F65 /* JMStaticContentTableTests */,
 				9B16CA7F177F56CA00702F65 /* Frameworks */,
 				9B16CA7E177F56CA00702F65 /* Products */,
 			);
@@ -92,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				9B16CA7D177F56CA00702F65 /* libJMStaticContentTable.a */,
-				9B16CA8D177F56CA00702F65 /* JMStaticContentTableTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,24 +92,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9B16CA96177F56CA00702F65 /* JMStaticContentTableTests */ = {
-			isa = PBXGroup;
-			children = (
-				9B16CA9C177F56CA00702F65 /* JMStaticContentTableTests.m */,
-				9B16CA97177F56CA00702F65 /* Supporting Files */,
-			);
-			path = JMStaticContentTableTests;
-			sourceTree = "<group>";
-		};
-		9B16CA97177F56CA00702F65 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9B16CA98177F56CA00702F65 /* JMStaticContentTableTests-Info.plist */,
-				9B16CA99177F56CA00702F65 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,24 +111,6 @@
 			productName = JMStaticContentTable;
 			productReference = 9B16CA7D177F56CA00702F65 /* libJMStaticContentTable.a */;
 			productType = "com.apple.product-type.library.static";
-		};
-		9B16CA8C177F56CA00702F65 /* JMStaticContentTableTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9B16CAA3177F56CA00702F65 /* Build configuration list for PBXNativeTarget "JMStaticContentTableTests" */;
-			buildPhases = (
-				9B16CA89177F56CA00702F65 /* Sources */,
-				9B16CA8A177F56CA00702F65 /* Frameworks */,
-				9B16CA8B177F56CA00702F65 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9B16CA94177F56CA00702F65 /* PBXTargetDependency */,
-			);
-			name = JMStaticContentTableTests;
-			productName = JMStaticContentTableTests;
-			productReference = 9B16CA8D177F56CA00702F65 /* JMStaticContentTableTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -203,21 +134,9 @@
 			projectRoot = "";
 			targets = (
 				9B16CA7C177F56CA00702F65 /* JMStaticContentTable */,
-				9B16CA8C177F56CA00702F65 /* JMStaticContentTableTests */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		9B16CA8B177F56CA00702F65 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9B16CA9B177F56CA00702F65 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9B16CA79177F56CA00702F65 /* Sources */ = {
@@ -228,34 +147,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B16CA89177F56CA00702F65 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9B16CA9D177F56CA00702F65 /* JMStaticContentTableTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9B16CA94177F56CA00702F65 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9B16CA7C177F56CA00702F65 /* JMStaticContentTable */;
-			targetProxy = 9B16CA93177F56CA00702F65 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		9B16CA99177F56CA00702F65 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9B16CA9A177F56CA00702F65 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9B16CA9E177F56CA00702F65 /* Debug */ = {
@@ -348,42 +240,6 @@
 			};
 			name = Release;
 		};
-		9B16CAA4177F56CA00702F65 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode5-DP2.app/Contents/Developer/Library/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JMStaticContentTable/JMStaticContentTable-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "JMStaticContentTableTests/JMStaticContentTableTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		9B16CAA5177F56CA00702F65 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode5-DP2.app/Contents/Developer/Library/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JMStaticContentTable/JMStaticContentTable-Prefix.pch";
-				INFOPLIST_FILE = "JMStaticContentTableTests/JMStaticContentTableTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -401,14 +257,6 @@
 			buildConfigurations = (
 				9B16CAA1177F56CA00702F65 /* Debug */,
 				9B16CAA2177F56CA00702F65 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		9B16CAA3177F56CA00702F65 /* Build configuration list for PBXNativeTarget "JMStaticContentTableTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9B16CAA4177F56CA00702F65 /* Debug */,
-				9B16CAA5177F56CA00702F65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
