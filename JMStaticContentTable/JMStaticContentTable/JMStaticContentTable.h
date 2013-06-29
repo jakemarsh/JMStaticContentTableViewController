@@ -7,7 +7,4 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface JMStaticContentTable : NSObject
-
-@end
+#import "JMStaticContentTableViewController.h"

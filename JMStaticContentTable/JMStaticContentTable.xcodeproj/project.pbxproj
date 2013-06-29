@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		9B16CA81177F56CA00702F65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16CA80177F56CA00702F65 /* Foundation.framework */; };
 		9B16CA86177F56CA00702F65 /* JMStaticContentTable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B16CA85177F56CA00702F65 /* JMStaticContentTable.h */; };
-		9B16CA88177F56CA00702F65 /* JMStaticContentTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16CA87177F56CA00702F65 /* JMStaticContentTable.m */; };
 		9B16CAB0177F572300702F65 /* JMStaticContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16CAA9177F572200702F65 /* JMStaticContentTableViewCell.m */; };
 		9B16CAB1177F572300702F65 /* JMStaticContentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16CAAB177F572200702F65 /* JMStaticContentTableViewController.m */; };
 		9B16CAB2177F572300702F65 /* JMStaticContentTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16CAAD177F572200702F65 /* JMStaticContentTableViewSection.m */; };
 		9B16CAB3177F572300702F65 /* JMStaticContentTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16CAAF177F572200702F65 /* JMStaticContentTextFieldTableViewCell.m */; };
+		9B16CABF177F586900702F65 /* JMStaticContentTableViewBlocks.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B16CAA7177F572200702F65 /* JMStaticContentTableViewBlocks.h */; };
+		9B16CAC0177F586900702F65 /* JMStaticContentTableViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B16CAA8177F572200702F65 /* JMStaticContentTableViewCell.h */; };
+		9B16CAC1177F586900702F65 /* JMStaticContentTableViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B16CAAA177F572200702F65 /* JMStaticContentTableViewController.h */; };
+		9B16CAC2177F586900702F65 /* JMStaticContentTableViewSection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B16CAAC177F572200702F65 /* JMStaticContentTableViewSection.h */; };
+		9B16CAC3177F586900702F65 /* JMStaticContentTextFieldTableViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B16CAAE177F572200702F65 /* JMStaticContentTextFieldTableViewCell.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,6 +27,11 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				9B16CABF177F586900702F65 /* JMStaticContentTableViewBlocks.h in CopyFiles */,
+				9B16CAC0177F586900702F65 /* JMStaticContentTableViewCell.h in CopyFiles */,
+				9B16CAC1177F586900702F65 /* JMStaticContentTableViewController.h in CopyFiles */,
+				9B16CAC2177F586900702F65 /* JMStaticContentTableViewSection.h in CopyFiles */,
+				9B16CAC3177F586900702F65 /* JMStaticContentTextFieldTableViewCell.h in CopyFiles */,
 				9B16CA86177F56CA00702F65 /* JMStaticContentTable.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -34,7 +43,6 @@
 		9B16CA80177F56CA00702F65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9B16CA84177F56CA00702F65 /* JMStaticContentTable-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JMStaticContentTable-Prefix.pch"; sourceTree = "<group>"; };
 		9B16CA85177F56CA00702F65 /* JMStaticContentTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTable.h; sourceTree = "<group>"; };
-		9B16CA87177F56CA00702F65 /* JMStaticContentTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTable.m; sourceTree = "<group>"; };
 		9B16CA8E177F56CA00702F65 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9B16CA91177F56CA00702F65 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		9B16CAA7177F572200702F65 /* JMStaticContentTableViewBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTableViewBlocks.h; sourceTree = "<group>"; };
@@ -92,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				9B16CA85177F56CA00702F65 /* JMStaticContentTable.h */,
-				9B16CA87177F56CA00702F65 /* JMStaticContentTable.m */,
 				9B16CA83177F56CA00702F65 /* Supporting Files */,
 			);
 			path = JMStaticContentTable;
@@ -177,7 +184,6 @@
 				9B16CAB0177F572300702F65 /* JMStaticContentTableViewCell.m in Sources */,
 				9B16CAB1177F572300702F65 /* JMStaticContentTableViewController.m in Sources */,
 				9B16CAB2177F572300702F65 /* JMStaticContentTableViewSection.m in Sources */,
-				9B16CA88177F56CA00702F65 /* JMStaticContentTable.m in Sources */,
 				9B16CAB3177F572300702F65 /* JMStaticContentTextFieldTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +300,7 @@
 				9B16CAA2177F56CA00702F65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
