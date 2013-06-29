@@ -10,6 +10,10 @@
 		9B16CA81177F56CA00702F65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16CA80177F56CA00702F65 /* Foundation.framework */; };
 		9B16CA86177F56CA00702F65 /* JMStaticContentTable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B16CA85177F56CA00702F65 /* JMStaticContentTable.h */; };
 		9B16CA88177F56CA00702F65 /* JMStaticContentTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16CA87177F56CA00702F65 /* JMStaticContentTable.m */; };
+		9B16CAB0177F572300702F65 /* JMStaticContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16CAA9177F572200702F65 /* JMStaticContentTableViewCell.m */; };
+		9B16CAB1177F572300702F65 /* JMStaticContentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16CAAB177F572200702F65 /* JMStaticContentTableViewController.m */; };
+		9B16CAB2177F572300702F65 /* JMStaticContentTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16CAAD177F572200702F65 /* JMStaticContentTableViewSection.m */; };
+		9B16CAB3177F572300702F65 /* JMStaticContentTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16CAAF177F572200702F65 /* JMStaticContentTextFieldTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +37,15 @@
 		9B16CA87177F56CA00702F65 /* JMStaticContentTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTable.m; sourceTree = "<group>"; };
 		9B16CA8E177F56CA00702F65 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9B16CA91177F56CA00702F65 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		9B16CAA7177F572200702F65 /* JMStaticContentTableViewBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTableViewBlocks.h; sourceTree = "<group>"; };
+		9B16CAA8177F572200702F65 /* JMStaticContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTableViewCell.h; sourceTree = "<group>"; };
+		9B16CAA9177F572200702F65 /* JMStaticContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTableViewCell.m; sourceTree = "<group>"; };
+		9B16CAAA177F572200702F65 /* JMStaticContentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTableViewController.h; sourceTree = "<group>"; };
+		9B16CAAB177F572200702F65 /* JMStaticContentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTableViewController.m; sourceTree = "<group>"; };
+		9B16CAAC177F572200702F65 /* JMStaticContentTableViewSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTableViewSection.h; sourceTree = "<group>"; };
+		9B16CAAD177F572200702F65 /* JMStaticContentTableViewSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTableViewSection.m; sourceTree = "<group>"; };
+		9B16CAAE177F572200702F65 /* JMStaticContentTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		9B16CAAF177F572200702F65 /* JMStaticContentTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTextFieldTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +63,7 @@
 		9B16CA74177F56CA00702F65 = {
 			isa = PBXGroup;
 			children = (
+				9B16CAA6177F572200702F65 /* JMStaticContentTableViewController */,
 				9B16CA82177F56CA00702F65 /* JMStaticContentTable */,
 				9B16CA7F177F56CA00702F65 /* Frameworks */,
 				9B16CA7E177F56CA00702F65 /* Products */,
@@ -90,6 +104,23 @@
 				9B16CA84177F56CA00702F65 /* JMStaticContentTable-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9B16CAA6177F572200702F65 /* JMStaticContentTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9B16CAA7177F572200702F65 /* JMStaticContentTableViewBlocks.h */,
+				9B16CAA8177F572200702F65 /* JMStaticContentTableViewCell.h */,
+				9B16CAA9177F572200702F65 /* JMStaticContentTableViewCell.m */,
+				9B16CAAA177F572200702F65 /* JMStaticContentTableViewController.h */,
+				9B16CAAB177F572200702F65 /* JMStaticContentTableViewController.m */,
+				9B16CAAC177F572200702F65 /* JMStaticContentTableViewSection.h */,
+				9B16CAAD177F572200702F65 /* JMStaticContentTableViewSection.m */,
+				9B16CAAE177F572200702F65 /* JMStaticContentTextFieldTableViewCell.h */,
+				9B16CAAF177F572200702F65 /* JMStaticContentTextFieldTableViewCell.m */,
+			);
+			name = JMStaticContentTableViewController;
+			path = ../JMStaticContentTableViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +174,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B16CAB0177F572300702F65 /* JMStaticContentTableViewCell.m in Sources */,
+				9B16CAB1177F572300702F65 /* JMStaticContentTableViewController.m in Sources */,
+				9B16CAB2177F572300702F65 /* JMStaticContentTableViewSection.m in Sources */,
 				9B16CA88177F56CA00702F65 /* JMStaticContentTable.m in Sources */,
+				9B16CAB3177F572300702F65 /* JMStaticContentTextFieldTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
