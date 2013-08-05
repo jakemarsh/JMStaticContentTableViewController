@@ -46,6 +46,26 @@
 	return cellContent.cellHeight;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:section];
+    UIView *headerView = sectionContent.headerView;
+	if (headerView) {
+        return CGRectGetHeight(headerView.frame);
+    }
+    
+    return UITableViewAutomaticDimension;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:section];
+    UIView *footerView = sectionContent.headerView;
+	if (footerView) {
+        return CGRectGetHeight(footerView.frame);
+    }
+    
+    return UITableViewAutomaticDimension;
+}
+
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:section];
 	return sectionContent.headerTitle;
