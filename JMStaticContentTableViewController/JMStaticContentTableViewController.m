@@ -55,6 +55,16 @@
 	return sectionContent.footerTitle;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:section];
+	return sectionContent.headerView;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+	JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:section];
+	return sectionContent.footerView;
+}
+
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:indexPath.section];
 	JMStaticContentTableViewCell *cellContent = [sectionContent.staticContentCells objectAtIndex:indexPath.row];
