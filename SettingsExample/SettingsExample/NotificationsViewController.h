@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Rubber Duck Software. All rights reserved.
 //
 
-#import "JMStaticContentTableViewController.h"
+#import <JMStaticContentTable/JMStaticContentTable.h>
 
 @interface NotificationsViewController : JMStaticContentTableViewController
 

@@ -17,10 +17,6 @@
 		30E38B481440DFA500552550 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B471440DFA500552550 /* main.m */; };
 		30E38B4C1440DFA500552550 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B4B1440DFA500552550 /* AppDelegate.m */; };
 		30E38B581440DFE100552550 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B571440DFE100552550 /* SettingsViewController.m */; };
-		30E38B641440E03100552550 /* JMStaticContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B5D1440E03100552550 /* JMStaticContentTableViewCell.m */; };
-		30E38B651440E03100552550 /* JMStaticContentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B5F1440E03100552550 /* JMStaticContentTableViewController.m */; };
-		30E38B661440E03100552550 /* JMStaticContentTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B611440E03100552550 /* JMStaticContentTableViewSection.m */; };
-		30E38B671440E03100552550 /* JMStaticContentTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38B631440E03100552550 /* JMStaticContentTextFieldTableViewCell.m */; };
 		30E38B97144220A700552550 /* Mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38B77144220A700552550 /* Mail.png */; };
 		30E38B98144220A700552550 /* Mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38B78144220A700552550 /* Mail@2x.png */; };
 		30E38BA3144220A700552550 /* Photos.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38B83144220A700552550 /* Photos.png */; };
@@ -41,7 +37,25 @@
 		30E38BC11442366300552550 /* WifiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E38BC01442366300552550 /* WifiViewController.m */; };
 		30E38BC414427CDA00552550 /* UIPreferencesBlueCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38BC214427CDA00552550 /* UIPreferencesBlueCheck.png */; };
 		30E38BC514427CDA00552550 /* UIPreferencesBlueCheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E38BC314427CDA00552550 /* UIPreferencesBlueCheck@2x.png */; };
+		9B16CABE177F580300702F65 /* libJMStaticContentTable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16CAB9177F57D600702F65 /* libJMStaticContentTable.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9B16CAB8177F57D600702F65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B16CAB4177F57D600702F65 /* JMStaticContentTable.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9B16CA7D177F56CA00702F65;
+			remoteInfo = JMStaticContentTable;
+		};
+		9B16CABB177F57FB00702F65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B16CAB4177F57D600702F65 /* JMStaticContentTable.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B16CA7C177F56CA00702F65;
+			remoteInfo = JMStaticContentTable;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		30595804156BC8CB001FCE1F /* WifiNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiNetwork.h; sourceTree = "<group>"; };
@@ -62,15 +76,6 @@
 		30E38B4B1440DFA500552550 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		30E38B561440DFE100552550 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		30E38B571440DFE100552550 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		30E38B5B1440E03100552550 /* JMStaticContentTableViewBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTableViewBlocks.h; sourceTree = "<group>"; };
-		30E38B5C1440E03100552550 /* JMStaticContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTableViewCell.h; sourceTree = "<group>"; };
-		30E38B5D1440E03100552550 /* JMStaticContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTableViewCell.m; sourceTree = "<group>"; };
-		30E38B5E1440E03100552550 /* JMStaticContentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTableViewController.h; sourceTree = "<group>"; };
-		30E38B5F1440E03100552550 /* JMStaticContentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTableViewController.m; sourceTree = "<group>"; };
-		30E38B601440E03100552550 /* JMStaticContentTableViewSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTableViewSection.h; sourceTree = "<group>"; };
-		30E38B611440E03100552550 /* JMStaticContentTableViewSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTableViewSection.m; sourceTree = "<group>"; };
-		30E38B621440E03100552550 /* JMStaticContentTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStaticContentTextFieldTableViewCell.h; sourceTree = "<group>"; };
-		30E38B631440E03100552550 /* JMStaticContentTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMStaticContentTextFieldTableViewCell.m; sourceTree = "<group>"; };
 		30E38B77144220A700552550 /* Mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mail.png; sourceTree = "<group>"; };
 		30E38B78144220A700552550 /* Mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mail@2x.png"; sourceTree = "<group>"; };
 		30E38B83144220A700552550 /* Photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Photos.png; sourceTree = "<group>"; };
@@ -92,6 +97,7 @@
 		30E38BC01442366300552550 /* WifiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiViewController.m; sourceTree = "<group>"; };
 		30E38BC214427CDA00552550 /* UIPreferencesBlueCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIPreferencesBlueCheck.png; sourceTree = "<group>"; };
 		30E38BC314427CDA00552550 /* UIPreferencesBlueCheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIPreferencesBlueCheck@2x.png"; sourceTree = "<group>"; };
+		9B16CAB4177F57D600702F65 /* JMStaticContentTable.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JMStaticContentTable.xcodeproj; path = ../JMStaticContentTable/JMStaticContentTable.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B16CABE177F580300702F65 /* libJMStaticContentTable.a in Frameworks */,
 				30E38B3C1440DFA500552550 /* UIKit.framework in Frameworks */,
 				30E38B3E1440DFA500552550 /* Foundation.framework in Frameworks */,
 				30E38B401440DFA500552550 /* CoreGraphics.framework in Frameworks */,
@@ -111,6 +118,7 @@
 		30E38B2C1440DFA500552550 = {
 			isa = PBXGroup;
 			children = (
+				9B16CAB4177F57D600702F65 /* JMStaticContentTable.xcodeproj */,
 				30E38B411440DFA500552550 /* SettingsExample */,
 				30E38B3A1440DFA500552550 /* Frameworks */,
 				30E38B381440DFA500552550 /* Products */,
@@ -138,7 +146,6 @@
 		30E38B411440DFA500552550 /* SettingsExample */ = {
 			isa = PBXGroup;
 			children = (
-				30E38B5A1440E03100552550 /* JMStaticContentTableViewController */,
 				30E38B4A1440DFA500552550 /* AppDelegate.h */,
 				30E38B4B1440DFA500552550 /* AppDelegate.m */,
 				30E38B561440DFE100552550 /* SettingsViewController.h */,
@@ -168,23 +175,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		30E38B5A1440E03100552550 /* JMStaticContentTableViewController */ = {
-			isa = PBXGroup;
-			children = (
-				30E38B5B1440E03100552550 /* JMStaticContentTableViewBlocks.h */,
-				30E38B5C1440E03100552550 /* JMStaticContentTableViewCell.h */,
-				30E38B5D1440E03100552550 /* JMStaticContentTableViewCell.m */,
-				30E38B5E1440E03100552550 /* JMStaticContentTableViewController.h */,
-				30E38B5F1440E03100552550 /* JMStaticContentTableViewController.m */,
-				30E38B601440E03100552550 /* JMStaticContentTableViewSection.h */,
-				30E38B611440E03100552550 /* JMStaticContentTableViewSection.m */,
-				30E38B621440E03100552550 /* JMStaticContentTextFieldTableViewCell.h */,
-				30E38B631440E03100552550 /* JMStaticContentTextFieldTableViewCell.m */,
-			);
-			name = JMStaticContentTableViewController;
-			path = ../../JMStaticContentTableViewController;
-			sourceTree = "<group>";
-		};
 		30E38B68144220A700552550 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +201,14 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		9B16CAB5177F57D600702F65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B16CAB9177F57D600702F65 /* libJMStaticContentTable.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -225,6 +223,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9B16CABC177F57FB00702F65 /* PBXTargetDependency */,
 			);
 			name = SettingsExample;
 			productName = SettingsExample;
@@ -250,12 +249,28 @@
 			mainGroup = 30E38B2C1440DFA500552550;
 			productRefGroup = 30E38B381440DFA500552550 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9B16CAB5177F57D600702F65 /* Products */;
+					ProjectRef = 9B16CAB4177F57D600702F65 /* JMStaticContentTable.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				30E38B361440DFA500552550 /* SettingsExample */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9B16CAB9177F57D600702F65 /* libJMStaticContentTable.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJMStaticContentTable.a;
+			remoteRef = 9B16CAB8177F57D600702F65 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		30E38B351440DFA500552550 /* Resources */ = {
@@ -295,10 +310,6 @@
 				30E38B481440DFA500552550 /* main.m in Sources */,
 				30E38B4C1440DFA500552550 /* AppDelegate.m in Sources */,
 				30E38B581440DFE100552550 /* SettingsViewController.m in Sources */,
-				30E38B641440E03100552550 /* JMStaticContentTableViewCell.m in Sources */,
-				30E38B651440E03100552550 /* JMStaticContentTableViewController.m in Sources */,
-				30E38B661440E03100552550 /* JMStaticContentTableViewSection.m in Sources */,
-				30E38B671440E03100552550 /* JMStaticContentTextFieldTableViewCell.m in Sources */,
 				30E38BC11442366300552550 /* WifiViewController.m in Sources */,
 				30595806156BC8CB001FCE1F /* WifiNetwork.m in Sources */,
 				30595809156BC8F9001FCE1F /* WifiNetworkTableViewCell.m in Sources */,
@@ -307,6 +318,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9B16CABC177F57FB00702F65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JMStaticContentTable;
+			targetProxy = 9B16CABB177F57FB00702F65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		30E38B441440DFA500552550 /* InfoPlist.strings */ = {
