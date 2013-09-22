@@ -128,9 +128,6 @@
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if(!tableView.editing && !tableView.allowsMultipleSelection) [tableView deselectRowAtIndexPath:indexPath animated:YES];
-	if(tableView.editing && !tableView.allowsMultipleSelectionDuringEditing) [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
 	JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:indexPath.section];
 	JMStaticContentTableViewCell *cellContent = [sectionContent.staticContentCells objectAtIndex:indexPath.row];
 
