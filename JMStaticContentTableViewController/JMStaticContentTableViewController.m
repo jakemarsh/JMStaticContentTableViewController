@@ -58,7 +58,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:section];
-    UIView *footerView = sectionContent.headerView;
+    UIView *footerView = sectionContent.footerView;
 	if (footerView) {
         return CGRectGetHeight(footerView.frame);
     }
