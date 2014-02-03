@@ -131,7 +131,7 @@
 - (NSString *) description {
     NSMutableString *str = [NSMutableString stringWithString:@"<JMStaticContentTableViewSection"];
 
-    [str appendFormat:@" sectionIndex='%d'", self.sectionIndex];
+    [str appendFormat:@" sectionIndex='%ld'", (long)self.sectionIndex];
     if(self.headerTitle) [str appendFormat:@" headerTitle='%@'", self.headerTitle];
     if(self.footerTitle) [str appendFormat:@" footerTitle='%@'", self.footerTitle];
 
