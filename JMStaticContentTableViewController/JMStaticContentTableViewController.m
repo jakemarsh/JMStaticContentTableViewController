@@ -43,6 +43,12 @@
 	JMStaticContentTableViewSection *sectionContent = [self.staticContentSections objectAtIndex:indexPath.section];
 	JMStaticContentTableViewCell *cellContent = [sectionContent.staticContentCells objectAtIndex:indexPath.row];
 
+	if (cellContent.cellHeight == -1) {
+		if (tableView.rowHeight == -1) {
+            		return UITableViewAutomaticDimension;
+        	}
+        	return tableView.rowHeight;
+    	}
 	return cellContent.cellHeight;
 }
 
