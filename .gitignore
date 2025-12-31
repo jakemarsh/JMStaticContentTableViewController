@@ -16,3 +16,9 @@ build/*
 xcuserdata
 profile
 *.moved-aside
+DerivedData/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved

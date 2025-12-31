@@ -1,166 +1,260 @@
-<div style="width:852px; height: 489px; position: relative; margin: 30px auto;"> 
-<img style="position: relative; width: 852px; height: 489px; margin: 0;" src="http://cl.ly/270g1q1e012L1l3n3H0u/GithubHeader.gif" alt="JMStaticTableViewController"/>
-</div>
+# JMStaticContentTableViewController
 
-A `UITableViewController` subclass that allows you easily and simply display what I call "static content". An example of such content is what is found in iOS's built-in Settings application. Or a  simple "About" screen. Or a "Login" screen. Or any number of simple screens that might display or collect information.
+A simple way to build Settings-style screens for iOS apps.
 
-All this is done using some really cool methods that use blocks. It also allows you to easily create `UITableViewControllers` that collection information.
+`JMStaticContentTableViewController` allows you to easily and simply display "static content" like iOS Settings, About screens, Login forms, or any screen that displays or collects information in a table format.
 
-It is very much a library in the making. It is quite functional and usable already, as you will see if you read on, however, there is a TON more that *could* be done with this library, I'd love to hear where everyone thinks it should go and how it could best be adapted to fit everyone's needs.
+Originally built with blocks in Objective-C, now fully rewritten in Swift with both UIKit and SwiftUI support.
 
-That being said, `JMStaticContentTableViewController` might not be for everyone, but if you've ever built a whole `UITableViewController` implementing full `UITableViewDataSource` and `UITableViewDelegate` methods, and so on, and so on, then you likely know how much time this library could save you. 
+## Features
 
-Keep reading for some awesome stuff.
+- **Declarative API** - Build table views with simple, readable code
+- **UIKit Support** - `JMStaticContentTableViewController` subclass
+- **SwiftUI Support** - `JMStaticContentList` view component
+- **Built-in Cell Types** - Text, toggle, value display cells
+- **Section Management** - Add, insert, remove sections with animations
+- **Custom Cells** - Use any `UITableViewCell` subclass
+- **Backward Compatible** - Original Objective-C API still works
+- **Thread-safe** - All operations properly synchronize with the table view
 
 ## Requirements
 
-You'll need to build your project that is using `JMStaticContentTableViewController` with a compiler that supports Automatic Reference Counting. Your project does not have to use ARC to use this library. [Read More Here](#arc) 
+- iOS 15.0+ / macOS 12.0+ / tvOS 15.0+
+- Swift 5.9+
+- Xcode 15.0+
 
-Also of note, `JMStaticContentTableViewController` supports iOS 5 and up.
+For older iOS versions (5.0-14.x), use the legacy Objective-C implementation included in this repo.
 
-## Example Usage
+## Installation
 
-### Adding a section and a cell
+### Swift Package Manager (Recommended)
 
-Here's a simple example of adding a section and a cell to your `UITableView`. You would likely write this code inside your `viewDidLoad` method inside your `JMStaticContentTableViewController` subclass.
+Add JMStaticContentTableViewController to your project via SPM:
 
-Note that you are passed in some very important objects, `JMStaticContentTableViewSection`, `JMStaticContentTableViewCell` and a `UITableViewCell`. You can configure the `UITableViewCell` exactly as you would normally. We also use the `JMStaticContentTableViewCell` object to setup things like `UITableViewCellStyle` and the reuse identifier.
+```swift
+dependencies: [
+    .package(url: "https://github.com/jakemarsh/JMStaticContentTableViewController.git", from: "2.0.0")
+]
+```
 
-`JMStaticContentTableViewSection` also allows you to setup things like the section titles.
+Or in Xcode: File → Add Package Dependencies → Enter the repository URL.
 
-As you can see we also get a nice looking `whenSelected:` block, this allows to write code that will be run whenever our cell is tapped, a perfect place to, for example, push on a `UIViewController`.
+### CocoaPods (Legacy)
 
-``` objective-c
-- (void) viewDidLoad {
-	[super viewDidLoad];
+```ruby
+pod 'JMStaticContentTableViewController'
+```
 
-	[self addSection:^(JMStaticContentTableViewSection *section, NSUInteger sectionIndex) {
-		[section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
-			staticContentCell.cellStyle = UITableViewCellStyleValue1;
-			staticContentCell.reuseIdentifier = @"DetailTextCell";
+## Quick Start
 
-			cell.textLabel.text = NSLocalizedString(@"Wi-Fi", @"Wi-Fi");
-			cell.detailTextLabel.text = NSLocalizedString(@"T.A.R.D.I.S.", @"T.A.R.D.I.S.");
-		} whenSelected:^(NSIndexPath *indexPath) {
-			[self.navigationController pushViewController:[[WifiViewController alloc] init] animated:YES];
-		}];
-	}];
+### Swift (UIKit)
+
+```swift
+import JMStaticContentTableViewController
+
+class SettingsViewController: JMStaticContentTableViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Add an Account section
+        addSection { section, _ in
+            section.headerTitle = "Account"
+
+            // Navigation cell
+            section.addCell(.text("Profile", onSelect: { [weak self] _ in
+                self?.navigationController?.pushViewController(ProfileViewController(), animated: true)
+            }))
+
+            // Toggle cell
+            section.addCell(.toggle("Notifications", isOn: true) { isOn in
+                UserDefaults.standard.set(isOn, forKey: "notifications")
+            })
+
+            // Value display cell
+            section.addCell(.value("Version", value: "2.0.0"))
+        }
+
+        // Add an About section
+        addSection { section, _ in
+            section.headerTitle = "About"
+            section.footerTitle = "Thanks for using our app!"
+
+            section.addCell(.text("Terms of Service", onSelect: { _ in
+                // Open terms
+            }))
+        }
+    }
 }
 ```
 
-### Inserting A Cell At Runtime
+### SwiftUI
 
-This will behave just like `addCell:` above, except it will animate nicely into place.
+```swift
+import JMStaticContentTableViewController
 
-``` objective-c
-- (void) _someTaskFinished {
-	[self insertCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
-		staticContentCell.reuseIdentifier = @"WifiNetworkCell";
-		staticContentCell.tableViewCellSubclass = [WifiNetworkTableViewCell class];
+struct SettingsView: View {
+    @State private var notificationsEnabled = true
 
-		cell.textLabel.text = network.networkName;
-		cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-		
-		cell.indentationLevel = 2;
-		cell.indentationWidth = 10.0;
-	} whenSelected:^(NSIndexPath *indexPath) {
-		// TODO
-	} atIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES];
+    var body: some View {
+        NavigationView {
+            JMStaticContentList {
+                JMStaticContentListSection(header: "Account") {
+                    JMStaticContentListRow("Profile", systemImage: "person.circle") {
+                        ProfileView()
+                    }
+
+                    JMStaticContentListToggle("Notifications", isOn: $notificationsEnabled)
+
+                    JMStaticContentListRow("Version", value: "2.0.0")
+                }
+
+                JMStaticContentListSection(header: "About", footer: "Thanks for using our app!") {
+                    JMStaticContentListRow("Terms of Service") {
+                        // Handle tap
+                    }
+                }
+            }
+            .navigationTitle("Settings")
+        }
+    }
+}
+```
+
+### Objective-C (Legacy)
+
+```objc
+#import "JMStaticContentTableViewController.h"
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [self addSection:^(JMStaticContentTableViewSection *section, NSUInteger sectionIndex) {
+        section.headerTitle = @"Account";
+
+        [section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
+            staticContentCell.cellStyle = UITableViewCellStyleValue1;
+            cell.textLabel.text = @"Wi-Fi";
+            cell.detailTextLabel.text = @"Connected";
+        } whenSelected:^(NSIndexPath *indexPath) {
+            [self.navigationController pushViewController:[[WifiViewController alloc] init] animated:YES];
+        }];
+    }];
+}
+```
+
+## Cell Types
+
+### Text Cell
+
+```swift
+// Simple text
+section.addCell(.text("Label"))
+
+// With subtitle
+section.addCell(.text("Label", detailText: "Subtitle"))
+
+// With image
+section.addCell(.text("Label", image: UIImage(systemName: "star")))
+
+// With selection handler
+section.addCell(.text("Label", onSelect: { indexPath in
+    // Handle selection
+}))
+```
+
+### Toggle Cell
+
+```swift
+section.addCell(.toggle("Enable Feature", isOn: currentValue) { newValue in
+    // Handle toggle change
+})
+```
+
+### Value Cell
+
+```swift
+section.addCell(.value("Version", value: "2.0.0"))
+```
+
+### Custom Cell
+
+```swift
+let cell = JMStaticContentCell(
+    reuseIdentifier: "CustomCell",
+    cellClass: MyCustomCell.self,
+    height: 80
+)
+
+cell.configureBlock = { cellConfig, tableViewCell, indexPath in
+    guard let customCell = tableViewCell as? MyCustomCell else { return }
+    customCell.configure(with: myData)
 }
 
-```
-
-### Inserting Multiple Cells At Runtime
-
-Same as above, except here we're wrapping our work in calls to `beginUpdates` and `endUpdates`, again retaining all of our `UITableView`'s built in "magic" while still getting to use our nice, convienent syntax.
-
-``` objective-c
-// Somewhere else you'd probably load some data somehow,
-// then want to insert rows for the new items in that data.
-
-// Normal table view functionality is completely retained, for example,
-// here we're inserting a bunch of cells inside a beginUpdates/endUpdates block
-// so all our new cells will animate in simultaneously and look awesome.
-
-[self.tableView beginUpdates];
-
-for(SomeModelObject *o in self.awesomeModelObjects) {
-	[self insertCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
-		staticContentCell.reuseIdentifier = @"SomeCell";
-	
-		cell.textLabel.text
-	} atIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES];
+cell.whenSelectedBlock = { indexPath in
+    // Handle selection
 }
 
-[self.tableView endUpdates];
-	
-```
-### Animation
-
-Anytime you ask `JMStaticContentTableViewController` to animate the inserting or deleting of cells or sections, it will use the `UITableViewRowAnimation` style of `UITableViewRowAnimationAutomatic` under the hood, so all of your animations will look great. This style was added in iOS 5.
-
-## Example App
-
-So for fun (and to aid me in developing the library, determine its needs) I started using `JMStaticTableViewController` to attempt to re-create the built-in iOS Settings application. This exists in a sort of "half-finished" state inside this repo.
-
-Some things to try in it are: 
-
-* Wi-Fi, go into the Wi-Fi section and notice how the rows appear after "searching for networks" (this is obviously simulated). Also try disabling and re-enabling Wi-Fi. Notice how the rows appear and disappear with correct animations. 
-
-* The Notifications section also demonstrates showing some content.
-
-* Cells that shouldn't be "selectable" (like cells containing `UISwitch` controls) aren't selectable.
-
-* Normal `UITableViewDelegate` methods still work, so implementing things like like adding a `UIActivityIndicatorView` next to a section title are no more or less complicated than before.
-
-It is, like I mentioned, unfinished, meant mearly as a tool for you to checkout and get some perspective on how the library might be used in the "real world". More completion of the example as well as any other examples are very welcome, please feel free to submit pull requests.
-
-### Screenshots
-
-<center>
-<img src="http://cl.ly/IKD6/iOS%20Simulator%20Screen%20shot%20Jul%2025,%202012%207.08.00%20PM.png" width="320" />&nbsp;&nbsp;
-<img src="http://cl.ly/IKjt/iOS%20Simulator%20Screen%20shot%20Jul%2025,%202012%207.08.01%20PM.png" width="320" />&nbsp;&nbsp;
-<img src="http://cl.ly/IKkO/iOS%20Simulator%20Screen%20shot%20Jul%2025,%202012%207.08.02%20PM.png" width="320" />&nbsp;&nbsp;
-<img src="http://cl.ly/IKcB/iOS%20Simulator%20Screen%20shot%20Jul%2025,%202012%207.08.04%20PM.png" width="320" />&nbsp;&nbsp;
-<img src="http://cl.ly/IKMS/iOS%20Simulator%20Screen%20shot%20Jul%2025,%202012%207.08.07%20PM.png" width="320" />
-</center>
-
-
-## iOS Version Compatability
-
-`JMStaticContentTableViewController` supports iOS 5 and up.
-
-## Adding To Your Project
-
-### CocoaPods (The New Easy Way)
-
-If you are using [CocoaPods](http://cocoapods.org) then just add this line to your `Podfile`:
-
-``` ruby
-dependency 'JMStaticContentTableViewController'
+section.addCell(cell)
 ```
 
-Now run `pod install` to install the dependency.
+## Section Management
 
-### Manually (The Old Hard Way)
+```swift
+// Add a section
+addSection { section, index in
+    section.headerTitle = "New Section"
+    // Add cells...
+}
 
-[Download](https://github.com/jakemarsh/JMStaticContentTableViewController/zipball/master) the source files or add it as a [git submodule](http://schacon.github.com/git/user-manual.html#submodules). Here's how to add it as a submodule:
+// Insert a section at a specific index
+insertSection({ section, index in
+    // Configure section...
+}, at: 1, animated: true)
 
-    $ cd YourProject
-    $ git submodule add https://github.com/jakemarsh/JMStaticContentTableViewController.git Vendor/JMStaticContentTableViewController
+// Remove a section
+removeSection(at: 0, animated: true)
 
-Add all of the files inside the folder named "JMStaticContentTableViewController" to your project.
+// Remove all sections
+removeAllSections()
 
-### ARC
+// Reload a section
+reloadSection(at: 0, animated: true)
+```
 
-`JMStaticContentTableViewController` uses [Automatic Reference Counting (ARC)](http://clang.llvm.org/docs/AutomaticReferenceCounting.html). You should be using ARC too, it's the future. If your project doesn't use ARC, you will need to set the `-fobjc-arc compiler` flag on all of the `JMStaticContentTableViewController` source files. To do this in Xcode, go to your active target and select the "Build Phases" tab. In the "Compiler Flags" column, set `-fobjc-arc` for each of the `JMStaticContentTableViewController` source files.
+## Migration from v1.x (Objective-C)
 
-### "This Library is Bad, and You Should Feel Bad"
+The Swift rewrite maintains API compatibility. Most Objective-C code will continue to work. For Swift projects:
 
-<center><img src="http://cl.ly/Oun7/Unknown.jpeg" title="This Library is Bad, and You Should Feel Bad" /></center>
+| Old API (Obj-C) | New API (Swift) |
+|-----------------|-----------------|
+| `[self addSection:^...]` | `addSection { section, index in ... }` |
+| `section.headerTitle = @"Title"` | `section.headerTitle = "Title"` |
+| `[section addCell:^... whenSelected:^...]` | `section.addCell(.text("Label", onSelect: { ... }))` |
+| `[self removeAllSections]` | `removeAllSections()` |
 
-This is my first try at building a system like this for this purpose, there are already a ton of things I plan on "fixing", improving, and re-doing. I wouldn't really be a good developer if I didn't hate all my code once I was done would ? ;)
+## How It Works
 
-I'm totally open to suggestions/fixes/hate mail/etc just let me know in a pull request, issue or even on twitter, I'm [@jakemarsh](http://twitter.com/jakemarsh).
+Images can be in three states when you add them:
 
-That being said, this is a very opinionated library. It makes assumptions and defines conventions that might not fit perfectly with everyone's codebase or app. If you are one of those people, please feel free to submit a pull request so we can talk about it and maybe get some of your desired changes worked in.
+1. **Configure Block** - Called each time the cell is displayed, configure the UITableViewCell here
+2. **When Selected Block** - Called when the user taps the cell, handle navigation or actions here
+3. **Automatic Cell Reuse** - Cells are automatically dequeued and reused based on the reuse identifier
+
+## Demo App
+
+The repository includes a Settings example app demonstrating typical usage patterns like:
+
+- Wi-Fi network selection with animated row insertion
+- Toggle controls for settings
+- Navigation between screens
+- Section headers and footers
+
+## License
+
+JMStaticContentTableViewController is available under the MIT license. See the LICENSE file for details.
+
+## Author
+
+Jake Marsh ([@jakemarsh](https://twitter.com/jakemarsh))
+
+Originally created in 2011, rewritten in Swift in 2024.
